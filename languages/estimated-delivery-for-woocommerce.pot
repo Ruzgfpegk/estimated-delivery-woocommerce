@@ -76,6 +76,10 @@ msgstr ""
 msgid "Guaranteed delivery%s %s"
 msgstr ""
 
+#: estimated-delivery-woocommerce.php:423
+msgid "Unsupported mode"
+msgstr ""
+
 #: views/dokanmarketplace-metabox.php:25 views/metabox-product.php:35
 #: views/options.php:198 views/wcmarketplace-metabox.php:20
 msgid "Days for Delivery"

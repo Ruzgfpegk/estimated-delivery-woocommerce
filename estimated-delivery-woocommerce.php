@@ -410,6 +410,8 @@ if ( ! defined( 'EDWCore' ) ) {
 					$string = '<div class="edw_date">'
 					          . sprintf( __( 'Guaranteed delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date )
 					          . '</div>';
+				} else {
+					$string = '<div class="edw_date">' . __( 'Unsupported mode', 'estimated-delivery-for-woocommerce' ) . '</div>';
 				}
 				
 				if ( $returnResult ) {
