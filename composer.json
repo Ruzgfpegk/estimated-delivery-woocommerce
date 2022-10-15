@@ -1,0 +1,22 @@
+{
+  "name": "ruzgfpegk/estimated-delivery-woocommerce",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "WTFPL",
+  "authors": [
+    {
+      "name": "Daniel Riera",
+      "email": "danielriera.p@gmail.com",
+      "homepage": "https://www.danielriera.net/",
+      "role": "Main developer"
+    },
+    {
+      "name": "Ruzgfpegk",
+      "homepage": "https://github.com/Ruzgfpegk",
+      "role": "Chores"
+    }
+  ],
+  "require": {
+    "ext-json": "*"
+  }
+}
