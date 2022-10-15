@@ -163,7 +163,7 @@ form#new_subscriber input[type='submit'] {
                     </th>
                     <td>
                         <label>
-                        <input type="checkbox" value="1" name="_edw_cache" <?= get_option( '_edw_cache', '0' ) == '1' ? 'checked="checked"' : '' ?> /></label>
+                        <input type="checkbox" value="1" name="_edw_cache" <?= get_option( '_edw_cache', '0' ) == '1' ? 'checked="checked"' : '' ?>/></label>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -172,7 +172,7 @@ form#new_subscriber input[type='submit'] {
                     </th>
                     <td>
                         <label>
-                        <input type="checkbox" value="1" name="_edw_same_day" <?= get_option( '_edw_same_day', '0' ) == '1' ? 'checked="checked"' : '' ?> /></label>
+                        <input type="checkbox" value="1" name="_edw_same_day" <?= get_option( '_edw_same_day', '0' ) == '1' ? 'checked="checked"' : '' ?>/></label>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -181,7 +181,7 @@ form#new_subscriber input[type='submit'] {
                     </th>
                     <td>
                         <label>
-                        <input type="checkbox" value="1" name="_edw_relative_dates" <?= get_option('_edw_relative_dates', '0') == '1' ? 'checked="checked"' : '' ?>/></label>
+                        <input type="checkbox" value="1" name="_edw_relative_dates" <?= get_option( '_edw_relative_dates', '0' ) == '1' ? 'checked="checked"' : '' ?>/></label>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -264,37 +264,37 @@ form#new_subscriber input[type='submit'] {
                     </th>
                     <td>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Mon" <?= (in_array('Mon', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Mon" <?= in_array( 'Mon',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Monday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Tue" <?= (in_array('Tue', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Tue" <?= in_array( 'Tue',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Tuesday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Wed" <?= (in_array('Wed', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Wed" <?= in_array( 'Wed',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Wednesday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Thu" <?= (in_array('Thu', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Thu" <?= in_array( 'Thu',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Thursday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Fri" <?= (in_array('Fri', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Fri" <?= in_array( 'Fri',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Friday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Sat" <?= (in_array('Sat', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Sat" <?= in_array( 'Sat',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Saturday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox" name="_edw_disabled_days[]" value="Sun" <?= (in_array('Sun', $disabledDays) == true) ? 'checked="checked"' : '' ?> />
+                            <input type="checkbox" name="_edw_disabled_days[]" value="Sun" <?= in_array( 'Sun',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
                             <?= __( 'Sunday', 'estimated-delivery-for-woocommerce') ?>
                         </label>
                     </td>
