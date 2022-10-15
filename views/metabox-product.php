@@ -5,13 +5,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$disabledDays = get_post_meta( $post->ID, '_edw_disabled_days', true );
-$mode         = get_post_meta( $post->ID, '_edw_mode', true );
+$product_id = $post->ID;
+
+$disabledDays = get_post_meta( $product_id, '_edw_disabled_days', true );
+$mode         = get_post_meta( $product_id, '_edw_mode', true );
 
 if ( $disabledDays === '' ) {
 	$disabledDays = [];
 }
-
 ?>
 <table class="form-table">
 <tr valign="top">
@@ -19,7 +20,7 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="checkbox" value="1" name="_edw_overwrite" <?= get_post_meta( $post->ID, '_edw_overwrite', true ) === '1' ? 'checked="checked"' : '' ?>/></label>
+        <input type="checkbox" value="1" name="_edw_overwrite" <?= get_post_meta( $product_id, '_edw_overwrite', true ) === '1' ? 'checked="checked"' : '' ?>/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -27,7 +28,7 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_days" value="<?= get_post_meta( $post->ID, '_edw_days', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_days" value="<?= get_post_meta( $product_id, '_edw_days', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -36,7 +37,7 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_max_days" value="<?= get_post_meta( $post->ID, '_edw_max_days', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_max_days" value="<?= get_post_meta( $product_id, '_edw_max_days', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -44,16 +45,16 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_days_outstock" value="<?= get_post_meta( $post->ID, '_edw_days_outstock', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_days_outstock" value="<?= get_post_meta( $product_id, '_edw_days_outstock', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
-    <th scope="row"><?= __( 'Max Days for Delivery out of stock', 'estimated-delivery-for-woocommerce') ?>
+    <th scope="row"><?= __( 'Max Days for Delivery out of stock', 'estimated-delivery-for-woocommerce' ) ?>
     <p class="description"><?= __( 'Set 0 for disable. If this set more than 0 days, it will show a range.', 'estimated-delivery-for-woocommerce' ) ?></p>
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_max_days_outstock" value="<?= get_post_meta( $post->ID, '_edw_max_days_outstock', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_max_days_outstock" value="<?= get_post_meta( $product_id, '_edw_max_days_outstock', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -61,16 +62,16 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_days_backorders" value="<?= get_post_meta( $post->ID, '_edw_days_backorders', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_days_backorders" value="<?= get_post_meta( $product_id, '_edw_days_backorders', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
-    <th scope="row"><?= __( 'Max Days for Delivery Backorders', 'estimated-delivery-for-woocommerce') ?>
-    <p class="description"><?= __( 'Set 0 for disable. If this set more than 0 days, it will show a range.', 'estimated-delivery-for-woocommerce') ?></p>
+    <th scope="row"><?= __( 'Max Days for Delivery Backorders', 'estimated-delivery-for-woocommerce' ) ?>
+    <p class="description"><?= __( 'Set 0 for disable. If this set more than 0 days, it will show a range.', 'estimated-delivery-for-woocommerce' ) ?></p>
     </th>
     <td>
         <label>
-        <input type="number" min="0" max="99999" name="_edw_max_days_backorders" value="<?= get_post_meta( $post->ID, '_edw_max_days_backorders', true ) ?>"/></label>
+        <input type="number" min="0" max="99999" name="_edw_max_days_backorders" value="<?= get_post_meta( $product_id, '_edw_max_days_backorders', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -93,7 +94,7 @@ if ( $disabledDays === '' ) {
     </th>
     <td>
         <label>
-        <input type="text" name="_edw_mode_custom" value="<?= get_post_meta( $post->ID, '_edw_mode_custom', true ) ?>"/></label>
+        <input type="text" name="_edw_mode_custom" value="<?= get_post_meta( $product_id, '_edw_mode_custom', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
@@ -117,13 +118,13 @@ if ( $disabledDays === '' ) {
         </label>
         <br>
         <label>
-            <input type="checkbox" name="_edw_disabled_days[]" value="Thu" <?= in_array( 'Thu',  $disabledDays ) ? 'checked="checked"' : '' ?>/>
-            <?= __('Thursday', 'estimated-delivery-for-woocommerce') ?>
+            <input type="checkbox" name="_edw_disabled_days[]" value="Thu" <?= in_array( 'Thu', $disabledDays ) ? 'checked="checked"' : '' ?>/>
+            <?= __( 'Thursday', 'estimated-delivery-for-woocommerce' ) ?>
         </label>
         <br>
         <label>
-            <input type="checkbox" name="_edw_disabled_days[]" value="Fri" <?= in_array( 'Fri', $disabledDays ) ? 'checked="checked"' : '' ?>/>
-            <?= __('Friday', 'estimated-delivery-for-woocommerce') ?>
+            <input type="checkbox" name="_edw_disabled_days[]" value="Fri" <?= in_array( 'Fri', $disabledDays ) ? 'checked="checked"' : '' ?> />
+            <?= __( 'Friday', 'estimated-delivery-for-woocommerce' ) ?>
         </label>
         <br>
         <label>
