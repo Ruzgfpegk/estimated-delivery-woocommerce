@@ -4,7 +4,7 @@
  * Description: Show estimated / guaranteed delivery, simple and easy
  * Author: Daniel Riera & Ruzgfpegk
  * Author URI: https://danielriera.net
- * Version: 1.2.7-r1
+ * Version: 1.2.7-r2
  * Text Domain: estimated-delivery-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.0
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 const EDW_PATH    = __DIR__ . '/';
-const EDW_VERSION = '1.2.7-r1';
+const EDW_VERSION = '1.2.7-r2';
 
 define( 'EDW_POSITION_SHOW', get_option( '_edw_position', 'woocommerce_after_add_to_cart_button' ) );
 define( 'EDW_USE_JS',        get_option( '_edw_cache',    '0' ) );
@@ -149,6 +149,7 @@ if ( ! defined( 'EDWCore' ) ) {
 				update_post_meta( $post_id, '_edw_days_outstock',       sanitize_text_field( $_POST['_edw_days_outstock'] ) );
 				update_post_meta( $post_id, '_edw_max_days_outstock',   sanitize_text_field( $_POST['_edw_max_days_outstock'] ) );
 				update_post_meta( $post_id, '_edw_mode',                sanitize_text_field( $_POST['_edw_mode'] ) );
+				update_post_meta( $post_id, '_edw_mode_custom',         sanitize_text_field( $_POST['_edw_mode_custom'] ) );
 				update_post_meta( $post_id, '_edw_days_backorders',     sanitize_text_field( $_POST['_edw_days_backorders'] ) );
 				update_post_meta( $post_id, '_edw_max_days_backorders', sanitize_text_field( $_POST['_edw_max_days_backorders'] ) );
 				
@@ -409,6 +410,12 @@ if ( ! defined( 'EDWCore' ) ) {
 				} elseif ( $mode === '2' ) {
 					$string = '<div class="edw_date">'
 					          . sprintf( __( 'Guaranteed delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date )
+					          . '</div>';
+				} elseif ( $mode === '3' ) {
+					$productModeCustom = get_option( '_edw_mode_custom', 'Custom' );
+					
+					$string = '<div class="edw_date">'
+					          . $productModeCustom . ' ' . $date
 					          . '</div>';
 				} else {
 					$string = '<div class="edw_date">' . __( 'Unsupported mode', 'estimated-delivery-for-woocommerce' ) . '</div>';

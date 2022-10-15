@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( isset( $_POST['action'] ) ) {
 	if ( ( isset( $_POST['save_option_nonce'] )
 	       && wp_verify_nonce( sanitize_text_field( $_POST['save_option_nonce'] ), 'edw_nonce' )
-	     ) || ( isset( $_POST['add_sub_nonce'] ) 
+	     ) || ( isset( $_POST['add_sub_nonce'] )
 	       && wp_verify_nonce( sanitize_text_field( $_POST['add_sub_nonce'] ),     'edw_nonce' )
 	     )
 	) {
@@ -25,6 +25,7 @@ if ( isset( $_POST['action'] ) ) {
 			update_option( '_edw_max_days',            sanitize_text_field( $_POST['_edw_max_days'] ) );
 			update_option( '_edw_days',                sanitize_text_field( $_POST['_edw_days'] ) );
 			update_option( '_edw_mode',                sanitize_text_field( $_POST['_edw_mode'] ) );
+			update_option( '_edw_mode_custom',         sanitize_text_field( $_POST['_edw_mode_custom'] ) );
 			update_option( '_edw_days_outstock',       sanitize_text_field( $_POST['_edw_days_outstock'] ) );
 			update_option( '_edw_max_days_outstock',   sanitize_text_field( $_POST['_edw_max_days_outstock'] ) );
 			update_option( '_edw_days_backorders',     sanitize_text_field( $_POST['_edw_days_backorders'] ) );
@@ -243,9 +244,19 @@ form#new_subscriber input[type='submit'] {
                         <select name="_edw_mode">
                             <option value="1" <?php selected("1", get_option('_edw_mode', '1')) ?>><?= __('Estimated', 'estimated-delivery-for-woocommerce' ) ?></option>
                             <option value="2" <?php selected("2", get_option('_edw_mode'))      ?>><?= __('Guaranteed', 'estimated-delivery-for-woocommerce' ) ?></option>
+                            <option value="3" <?php selected("3", get_option('_edw_mode'))      ?>><?= __('Custom string', 'estimated-delivery-for-woocommerce' ) ?></option>
                         </select>
                         </label>
                     </td>
+                </tr>
+                <tr valign="top">
+                   <th scope="row"><?= __( 'Custom mode string (if selected above)', 'estimated-delivery-for-woocommerce') ?>
+                       <p class="description"><?= __( 'Define your own mode here', 'estimated-delivery-for-woocommerce' ) ?></p>
+                   </th>
+                   <td>
+                       <label>
+                       <input type="text" name="_edw_mode_custom" value="<?= get_option( '_edw_mode_custom', '' ) ?>"/></label>
+                   </td>
                 </tr>
                 <tr valign="top">
                     <th scope="row"><?= __( 'Days disabled', 'estimated-delivery-for-woocommerce' ) ?>

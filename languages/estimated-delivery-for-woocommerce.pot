@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-10-15 18:52+0200\n"
+"POT-Creation-Date: 2022-10-15 19:24+0200\n"
 "PO-Revision-Date: 2019-08-28 20:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -139,48 +139,63 @@ msgstr ""
 msgid "Guaranteed"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:89 views/metabox-product.php:109
-#: views/options.php:272 views/wcmarketplace-metabox.php:84
+#: views/dokanmarketplace-metabox.php:84 views/metabox-product.php:94
+#: views/options.php:257 views/wcmarketplace-metabox.php:79
+msgid "Custom string"
+msgstr ""
+
+#: views/dokanmarketplace-metabox.php:90 views/metabox-product.php:100
+#: views/options.php:263 views/wcmarketplace-metabox.php:85
+msgid "Custom mode string (if selected above)"
+msgstr ""
+
+#: views/dokanmarketplace-metabox.php:91 views/metabox-product.php:101
+#: views/options.php:264 views/wcmarketplace-metabox.php:86
+msgid "Define your own mode here"
+msgstr ""
+
+#: views/dokanmarketplace-metabox.php:99 views/metabox-product.php:109
+#: views/options.php:272 views/wcmarketplace-metabox.php:94
 msgid "Days disabled"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:90 views/metabox-product.php:110
-#: views/options.php:273 views/wcmarketplace-metabox.php:85
+#: views/dokanmarketplace-metabox.php:100 views/metabox-product.php:110
+#: views/options.php:273 views/wcmarketplace-metabox.php:95
 msgid "Select the days that NO shipments are made."
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:95 views/metabox-product.php:115
-#: views/options.php:278 views/wcmarketplace-metabox.php:90
+#: views/dokanmarketplace-metabox.php:105 views/metabox-product.php:115
+#: views/options.php:278 views/wcmarketplace-metabox.php:100
 msgid "Monday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:100 views/metabox-product.php:120
-#: views/options.php:283 views/wcmarketplace-metabox.php:95
+#: views/dokanmarketplace-metabox.php:110 views/metabox-product.php:120
+#: views/options.php:283 views/wcmarketplace-metabox.php:105
 msgid "Tuesday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:105 views/metabox-product.php:125
-#: views/options.php:288 views/wcmarketplace-metabox.php:100
+#: views/dokanmarketplace-metabox.php:115 views/metabox-product.php:125
+#: views/options.php:288 views/wcmarketplace-metabox.php:110
 msgid "Wednesday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:110 views/metabox-product.php:130
-#: views/options.php:293 views/wcmarketplace-metabox.php:105
+#: views/dokanmarketplace-metabox.php:120 views/metabox-product.php:130
+#: views/options.php:293 views/wcmarketplace-metabox.php:115
 msgid "Thursday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:115 views/metabox-product.php:135
-#: views/options.php:298 views/wcmarketplace-metabox.php:110
+#: views/dokanmarketplace-metabox.php:125 views/metabox-product.php:135
+#: views/options.php:298 views/wcmarketplace-metabox.php:120
 msgid "Friday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:120 views/metabox-product.php:140
-#: views/options.php:303 views/wcmarketplace-metabox.php:115
+#: views/dokanmarketplace-metabox.php:130 views/metabox-product.php:140
+#: views/options.php:303 views/wcmarketplace-metabox.php:125
 msgid "Saturday"
 msgstr ""
 
-#: views/dokanmarketplace-metabox.php:125 views/metabox-product.php:145
-#: views/options.php:308 views/wcmarketplace-metabox.php:120
+#: views/dokanmarketplace-metabox.php:135 views/metabox-product.php:145
+#: views/options.php:308 views/wcmarketplace-metabox.php:130
 msgid "Sunday"
 msgstr ""
 

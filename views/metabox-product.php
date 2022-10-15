@@ -82,8 +82,18 @@ if ( $disabledDays === '' ) {
         <select name="_edw_mode">
             <option value="1" <?php selected( '1', $mode ) ?>><?= __( 'Estimated', 'estimated-delivery-for-woocommerce' ) ?></option>
             <option value="2" <?php selected( '2', $mode ) ?>><?= __( 'Guaranteed', 'estimated-delivery-for-woocommerce' ) ?></option>
+            <option value="3" <?php selected( '3', $mode ) ?>><?= __( 'Custom string', 'estimated-delivery-for-woocommerce' ) ?></option>
         </select>
         </label>
+    </td>
+</tr>
+<tr valign="top">
+    <th scope="row"><?= __( 'Custom mode string (if selected above)', 'estimated-delivery-for-woocommerce' ) ?>
+        <p class="description"><?= __( 'Define your own mode here', 'estimated-delivery-for-woocommerce' ) ?></p>
+    </th>
+    <td>
+        <label>
+        <input type="text" name="_edw_mode_custom" value="<?= get_post_meta( $post->ID, '_edw_mode_custom', true ) ?>"/></label>
     </td>
 </tr>
 <tr valign="top">
