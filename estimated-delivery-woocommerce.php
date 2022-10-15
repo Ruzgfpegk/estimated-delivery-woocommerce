@@ -4,7 +4,7 @@
  * Description: Show estimated / guaranteed delivery, simple and easy
  * Author: Daniel Riera & Ruzgfpegk
  * Author URI: https://danielriera.net
- * Version: 1.2.7-r2
+ * Version: 1.2.7-r3
  * Text Domain: estimated-delivery-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.0
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 const EDW_PATH    = __DIR__ . '/';
-const EDW_VERSION = '1.2.7-r2';
+const EDW_VERSION = '1.2.7-r3';
 
 define( 'EDW_POSITION_SHOW', get_option( '_edw_position', 'woocommerce_after_add_to_cart_button' ) );
 define( 'EDW_USE_JS',        get_option( '_edw_cache',    '0' ) );

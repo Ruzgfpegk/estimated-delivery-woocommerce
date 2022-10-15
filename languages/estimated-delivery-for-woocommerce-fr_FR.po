@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: edwoo\n"
+"Project-Id-Version: \n"
 "POT-Creation-Date: 2022-10-15 22:00+0200\n"
-"PO-Revision-Date: 2022-10-15 22:12+0200\n"
-"Last-Translator: Daniel Riera <daniel@taxapro.com>\n"
-"Language-Team: \n"
-"Language: es\n"
+"PO-Revision-Date: 2022-10-15 22:01+0200\n"
+"Last-Translator: \n"
+"Language-Team: Ruzgfpegk\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
@@ -19,76 +19,75 @@ msgstr ""
 #: estimated-delivery-woocommerce.php:191
 #: estimated-delivery-woocommerce.php:192
 msgid "Estimated Delivery"
-msgstr "Entrega Estimada"
+msgstr "Livraison estimée"
 
 #: estimated-delivery-woocommerce.php:199
 msgid "Disabled, use shortcode"
-msgstr "Deshabilitar, usaré shortcode"
+msgstr "Désactivé : utiliser le shortcode"
 
 #: estimated-delivery-woocommerce.php:200
 msgid "After cart button"
-msgstr "Después del botón de añadir al carrito"
+msgstr "Après le bouton \"Panier\""
 
 #: estimated-delivery-woocommerce.php:201
 msgid "Before cart button"
-msgstr "Antes del botón de añadir al carrito"
+msgstr "Avant le bouton \"Panier\""
 
 #: estimated-delivery-woocommerce.php:202
 msgid "After product meta"
-msgstr "Después de la meta del producto"
+msgstr "Après les détails du produit"
 
 #: estimated-delivery-woocommerce.php:203
 msgid "Before product summary"
-msgstr "Antes del resumen del producto"
+msgstr "Avant le résumé du produit"
 
 #: estimated-delivery-woocommerce.php:204
 msgid "After product summary"
-msgstr "Después del resumen del producto"
+msgstr "Après le résumé du produit"
 
 #: estimated-delivery-woocommerce.php:205
 msgid "Product Thumbnail (may not work)"
-msgstr "Debajo de la galería (Puede no funcionar)"
+msgstr "Miniature de produit (peut ne pas fonctionner)"
 
 #: estimated-delivery-woocommerce.php:352
 msgid " on"
-msgstr " el"
+msgstr " le"
 
 #: estimated-delivery-woocommerce.php:364
 #: estimated-delivery-woocommerce.php:392
 #, php-format
 msgid "this %s, %s"
-msgstr "este %s, %s"
+msgstr "ce %s, %s"
 
 #: estimated-delivery-woocommerce.php:371
 #: estimated-delivery-woocommerce.php:399
 #, php-format
 msgid "the next %s, %s"
-msgstr "el próximo %s, %s"
+msgstr "%s prochain, %s"
 
 #: estimated-delivery-woocommerce.php:408
 #, php-format
 msgid "Estimated delivery%s %s"
-msgstr "Entrega estimada%s %s"
+msgstr "Livraison estimée%s %s"
 
 #: estimated-delivery-woocommerce.php:412
 #, php-format
 msgid "Guaranteed delivery%s %s"
-msgstr "Entrega Garantizada%s %s"
+msgstr "Livraison garantie%s %s"
 
 #: estimated-delivery-woocommerce.php:421
-#, fuzzy
 msgid "Unsupported mode"
-msgstr "Modo no compatible"
+msgstr "Mode non-supporté"
 
 #: views/dokanmarketplace-metabox.php:25 views/metabox-product.php:27
 #: views/options.php:188 views/wcmarketplace-metabox.php:22
 msgid "Days for Delivery"
-msgstr "Días para el envío"
+msgstr "Jours pour la livraison"
 
 #: views/dokanmarketplace-metabox.php:33 views/metabox-product.php:35
 #: views/options.php:196 views/wcmarketplace-metabox.php:30
 msgid "Max Days for Delivery"
-msgstr "Máximos días para el envio"
+msgstr "Jours maximum pour la livraison"
 
 #: views/dokanmarketplace-metabox.php:34 views/dokanmarketplace-metabox.php:51
 #: views/dokanmarketplace-metabox.php:68 views/metabox-product.php:36
@@ -97,157 +96,152 @@ msgstr "Máximos días para el envio"
 #: views/wcmarketplace-metabox.php:31 views/wcmarketplace-metabox.php:48
 #: views/wcmarketplace-metabox.php:65
 msgid "Set 0 for disable. If this set more than 0 days, it will show a range."
-msgstr ""
-"Establecer en 0 para deshabilitar, si es más de 0 se mostrará un rango."
+msgstr "Si supérieur à 0, affiche une plage de jours."
 
 #: views/dokanmarketplace-metabox.php:42 views/metabox-product.php:44
 #: views/options.php:205 views/wcmarketplace-metabox.php:39
 msgid "Days for Delivery out of stock"
-msgstr "Días para el envío (Sin Stock)"
+msgstr "Jours pour la livraison lorsqu'en rupture de stock"
 
 #: views/dokanmarketplace-metabox.php:50 views/metabox-product.php:52
 #: views/options.php:213 views/wcmarketplace-metabox.php:47
 msgid "Max Days for Delivery out of stock"
-msgstr "Máximos días para el envio (Sin Stock)"
+msgstr "Jours maximum pour la livraison lorsqu'en rupture de stock"
 
 #: views/dokanmarketplace-metabox.php:59 views/metabox-product.php:61
 #: views/options.php:222 views/wcmarketplace-metabox.php:56
-#, fuzzy
 msgid "Days for Delivery Backorders"
-msgstr "Días para el envío (Pedido)"
+msgstr "Jours pour la livraison lorsqu'en réapprovisionnement"
 
 #: views/dokanmarketplace-metabox.php:67 views/metabox-product.php:69
 #: views/options.php:230 views/wcmarketplace-metabox.php:64
-#, fuzzy
 msgid "Max Days for Delivery Backorders"
-msgstr "Máximos días para el envio (Pedido)"
+msgstr "Jours maximum pour la livraison lorsqu'en réapprovisionnement"
 
 #: views/dokanmarketplace-metabox.php:76 views/metabox-product.php:78
 #: views/options.php:239 views/wcmarketplace-metabox.php:73
 msgid "Estimated or Guaranteed"
-msgstr "Estimada o Garantizada"
+msgstr "Estimée ou Garantie"
 
 #: views/dokanmarketplace-metabox.php:77 views/metabox-product.php:79
 #: views/options.php:240 views/wcmarketplace-metabox.php:74
 msgid "The message will change."
-msgstr "Esto cambiará el mensaje."
+msgstr "Modifie le message affiché."
 
 #: views/dokanmarketplace-metabox.php:82 views/metabox-product.php:84
 #: views/options.php:245 views/wcmarketplace-metabox.php:79
 msgid "Estimated"
-msgstr "Estimada"
+msgstr "Estimée"
 
 #: views/dokanmarketplace-metabox.php:83 views/metabox-product.php:85
 #: views/options.php:246 views/wcmarketplace-metabox.php:80
 msgid "Guaranteed"
-msgstr "Garantizada"
+msgstr "Garantie"
 
 #: views/dokanmarketplace-metabox.php:84 views/metabox-product.php:86
 #: views/options.php:247 views/wcmarketplace-metabox.php:81
-#, fuzzy
 msgid "Custom string"
-msgstr "Cadena personalizada"
+msgstr "(personnalisé)"
 
 #: views/dokanmarketplace-metabox.php:90 views/metabox-product.php:92
 #: views/options.php:253 views/wcmarketplace-metabox.php:87
-#, fuzzy
 msgid "Custom mode string (if selected above)"
-msgstr "Cadena de modo personalizado (si se selecciona anteriormente)"
+msgstr "Chaîne personnalisée (si sélectionnée ci-dessus)"
 
 #: views/dokanmarketplace-metabox.php:91 views/metabox-product.php:93
 #: views/options.php:254 views/wcmarketplace-metabox.php:88
-#, fuzzy
 msgid "Define your own mode here"
-msgstr "Define tu propio modo aquí"
+msgstr "Définissez ici votre propre verbe"
 
 #: views/dokanmarketplace-metabox.php:99 views/metabox-product.php:101
 #: views/options.php:262 views/wcmarketplace-metabox.php:96
 msgid "Days disabled"
-msgstr "Días Deshabilitados"
+msgstr "Jours désactivés"
 
 #: views/dokanmarketplace-metabox.php:100 views/metabox-product.php:102
 #: views/options.php:263 views/wcmarketplace-metabox.php:97
 msgid "Select the days that NO shipments are made."
-msgstr "Selecciona los días que NO se realizan envíos."
+msgstr "Sélectionnez les jours où AUCUN envoi n'est fait."
 
 #: views/dokanmarketplace-metabox.php:105 views/metabox-product.php:107
 #: views/options.php:268 views/wcmarketplace-metabox.php:102
 msgid "Monday"
-msgstr "Lunes"
+msgstr "Lundi"
 
 #: views/dokanmarketplace-metabox.php:110 views/metabox-product.php:112
 #: views/options.php:273 views/wcmarketplace-metabox.php:107
 msgid "Tuesday"
-msgstr "Martes"
+msgstr "Mardi"
 
 #: views/dokanmarketplace-metabox.php:115 views/metabox-product.php:117
 #: views/options.php:278 views/wcmarketplace-metabox.php:112
 msgid "Wednesday"
-msgstr "Miercoles"
+msgstr "Mercredi"
 
 #: views/dokanmarketplace-metabox.php:120 views/metabox-product.php:122
 #: views/options.php:283 views/wcmarketplace-metabox.php:117
 msgid "Thursday"
-msgstr "Jueves"
+msgstr "Jeudi"
 
 #: views/dokanmarketplace-metabox.php:125 views/metabox-product.php:127
 #: views/options.php:288 views/wcmarketplace-metabox.php:122
 msgid "Friday"
-msgstr "Viernes"
+msgstr "Vendredi"
 
 #: views/dokanmarketplace-metabox.php:130 views/metabox-product.php:132
 #: views/options.php:293 views/wcmarketplace-metabox.php:127
 msgid "Saturday"
-msgstr "Sábado"
+msgstr "Samedi"
 
 #: views/dokanmarketplace-metabox.php:135 views/metabox-product.php:137
 #: views/options.php:298 views/wcmarketplace-metabox.php:132
 msgid "Sunday"
-msgstr "Domingo"
+msgstr "Dimanche"
 
 #: views/metabox-product.php:19
 msgid "Overwrite general settings"
-msgstr "Sobreescribir configuración"
+msgstr "Remplacer les réglages généraux"
 
 #: views/options.php:75
 msgid "An error has occurred, try again."
-msgstr "Ha ocurrido un error, pruebe de nuevo."
+msgstr "Une erreur est survenue, veuillez réessayer."
 
 #: views/options.php:79
 msgid "Welcome to newsletter :)"
-msgstr "Bienvenid@ al newsletter"
+msgstr "Bienvenue à la liste de diffusion :)"
 
 #: views/options.php:121
 msgid "Estimated Delivery for Woocommerce"
-msgstr "Entrega Estimada para WooCommerce"
+msgstr "Livraison Estimée pour WooCommerce"
 
 #: views/options.php:122
 msgid "Show the estimated or guaranteed delivery for the product"
-msgstr "Muestra la entrega estimada o garantizada por cada producto"
+msgstr "Montre les délais de livraison estimée ou garantie d'un produit"
 
 #: views/options.php:129
 msgid "Do you want to receive the latest?"
-msgstr "¿Quieres recibir lo último?"
+msgstr "Souhaitez-vous être tenu au courant des dernières nouveautés ?"
 
 #: views/options.php:130
 msgid ""
 "Thank you very much for using our plugin, if you want to receive the latest "
 "news, offers, promotions, discounts, etc ... Sign up for our newsletter. :)"
 msgstr ""
-"Muchas gracias por usar nuestro plugin, si quieres recibir noticias, "
-"ofertas, promociones, descuentos...Inscríbete en nuestro boletín. :)"
+"Merci beaucoup d'utiliser notre extension. Pour recevoir les dernières "
+"nouvelles, offres, ... inscrivez-vous à notre liste de diffusion (en "
+"anglais) :)"
 
 #: views/options.php:132
 msgid "Required"
-msgstr "Requerido"
+msgstr "Requis"
 
 #: views/options.php:140
 msgid "Submit"
-msgstr "Enviar"
+msgstr "Envoyer"
 
 #: views/options.php:140
 msgid "Processing"
-msgstr "Procesando"
+msgstr "Traitement"
 
 #: views/options.php:151
 msgid ""
@@ -255,58 +249,61 @@ msgid ""
 "a donation so that we can continue developing and updating, adding news, "
 "this will always be free."
 msgstr ""
-"Desarrollar este plugin lleva tiempo, por ello si es de tu agrado le "
-"invitamos a realizar una donación para que podamos seguir desarrollando y "
-"actualizando, añadiendo novedades, esto será siempre gratis."
+"Développer cette extension prend du temps, donc si vous l'appréciez nous "
+"vous invitons à faire un don afin de permettre au développement de continuer."
 
 #: views/options.php:152
 msgid "Make a donation now to help development"
-msgstr "Realiza una donación ahora par ayudar al desarrollo"
+msgstr "Faire un don pour soutenir le développement"
 
 #: views/options.php:161
 msgid "Use AJAX"
-msgstr "Usar AJAX"
+msgstr "Utiliser AJAX"
 
 #: views/options.php:162
 msgid "If your site use cache system, active this option."
-msgstr "Si tu sitio usa cache, activa esta opción."
+msgstr "Cochez cette case si le site utilise un système de cache."
 
 #: views/options.php:170
-#, fuzzy
 msgid "Delivery same day"
-msgstr "Entrega el mismo día"
+msgstr "Livraison le jour même"
 
 #: views/options.php:171
-#, fuzzy
 msgid ""
 "When you set 0 in any option the estimated delivery is disabled, activate "
 "this option to allow setting 0 and displaying the estimated date."
 msgstr ""
-"Cuando establezca 0 en cualquier opción, la entrega estimada está "
-"deshabilitada, active esta opción para permitir la configuración 0 y mostrar "
-"la fecha estimada."
+"Activer cette option pour permettre d'entrer 0 jour dans les délais et ainsi "
+"afficher la date estimée."
 
 #: views/options.php:179
 msgid "Use Relative Dates"
-msgstr "Usar fechas relativas"
+msgstr "Utiliser des dates relatives"
 
 #: views/options.php:180
 msgid "Only work with current and next week"
-msgstr "Solo funciona con la semana actual y la próxima"
+msgstr "Ne prendre en compte que cette semaine et la suivante"
 
 #: views/options.php:303
 msgid "Position"
-msgstr "Posición"
+msgstr "Position"
 
 #: views/options.php:317
 msgid "Save"
-msgstr "Guardar"
+msgstr "Enregistrer"
 
 #: views/options.php:319
 msgid "Need style?"
-msgstr "Necesitas dar estilos?"
+msgstr "Il vous faut du style ?"
 
 #: views/options.php:320
 msgid "Enjoy! Paste this CSS code into your Customizer and edit as you like"
 msgstr ""
-"A disfrutar, pega este código en el personalizador CSS y edítalo a tu gusto"
+"Amusez-vous ! Collez ce code CSS dans Personnalisation/CSS additionnel, et "
+"éditez-le selon vos désirs."
+
+#~ msgid "Custom date string"
+#~ msgstr "Chaîne de date personnalisée"
+
+#~ msgid "Define your own date format here"
+#~ msgstr "Définissez ici votre propre format de date"
