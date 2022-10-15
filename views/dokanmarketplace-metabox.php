@@ -126,12 +126,12 @@ if ( $disabledDays === '' ) {
         </label>
         <br>
         <label>
-            <input type="checkbox" name="_edw_disabled_days[]" value="Sat" <?= in_array( 'Sat', $disabledDays ) ? 'checked="checked"' : '' ?> />
+            <input type="checkbox" name="_edw_disabled_days[]" value="Sat" <?= in_array( 'Sat', $disabledDays ) ? 'checked="checked"' : '' ?>/>
             <?= __( 'Saturday', 'estimated-delivery-for-woocommerce' ) ?>
         </label>
         <br>
         <label>
-            <input type="checkbox" name="_edw_disabled_days[]" value="Sun" <?= in_array( 'Sun', $disabledDays ) ? 'checked="checked"' : '' ?> />
+            <input type="checkbox" name="_edw_disabled_days[]" value="Sun" <?= in_array( 'Sun', $disabledDays ) ? 'checked="checked"' : '' ?>/>
             <?= __( 'Sunday', 'estimated-delivery-for-woocommerce' ) ?>
         </label>
     </td>
