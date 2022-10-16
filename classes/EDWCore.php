@@ -104,7 +104,8 @@ class EDWCore {
 	}
 	
 	public function edw_dokan_compatibility_content_tab() {
-		require_once( EDW_PATH . 'views/dokanmarketplace-metabox.php' );
+		$dokanmp_metabox = new DokanMP_Metabox;
+		$dokanmp_metabox->displayForm();
 	}
 	
 	public function edw_wcmp_compatibility_filter_tabs( $tabs ) {
