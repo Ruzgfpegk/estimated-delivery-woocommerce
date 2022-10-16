@@ -5,12 +5,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'EDW_API' ) ) {
 	class EDW_API {
-		function __construct() {
+		public function __construct() {
 			add_action( 'wp_ajax_nopriv_edw_get_estimate_dates', [ $this, 'edw_get_estimate_dates' ] );
 			add_action( 'wp_ajax_edw_get_estimate_dates',        [ $this, 'edw_get_estimate_dates' ] );
 		}
 		
-		function edw_get_estimate_dates() {
+		public function edw_get_estimate_dates() {
 			global $EDWCore;
 			
 			$product = sanitize_text_field( $_POST['product'] );

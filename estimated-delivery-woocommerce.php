@@ -4,7 +4,7 @@
  * Description: Show estimated / guaranteed delivery, simple and easy
  * Author: Daniel Riera & Ruzgfpegk
  * Author URI: https://danielriera.net
- * Version: 1.2.7-r3
+ * Version: 1.2.7-r4
  * Text Domain: estimated-delivery-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.0
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 const EDW_PATH    = __DIR__ . '/';
-const EDW_VERSION = '1.2.7-r3';
+const EDW_VERSION = '1.2.7-r4';
 
 define( 'EDW_POSITION_SHOW', get_option( '_edw_position', 'woocommerce_after_add_to_cart_button' ) );
 define( 'EDW_USE_JS',        get_option( '_edw_cache',    '0' ) );
@@ -39,15 +39,9 @@ if ( ! defined( 'EDWCore' ) ) {
 			'woocommerce_product_thumbnails'            => 'div.woocommerce-product-gallery|inside',
 		];
 		
-		function __construct() {
+		public function __construct() {
 			add_action( 'admin_menu',     [ $this, 'edw_menu' ] );
 			add_action( 'plugins_loaded', [ $this, 'edw_load_textdomain' ] );
-			
-			if ( EDW_USE_JS === '0' ) {
-				add_action( EDW_POSITION_SHOW, [ $this, 'edw_show_message' ] );
-			} else {
-				add_action( 'wp_footer', [ $this, 'edw_show_js' ], 99 );
-			}
 			
 			add_action( 'wp_enqueue_scripts', [ $this, 'edw_load_style' ] );
 			add_action( 'save_post_product',  [ $this, 'edw_save_product' ], 10, 3 );
@@ -63,78 +57,39 @@ if ( ! defined( 'EDWCore' ) ) {
 			add_filter( 'wcmp_product_data_tabs',      [ $this, 'edw_wcmp_compatibility_filter_tabs' ] );
 			add_action( 'wcmp_product_tabs_content',   [ $this, 'edw_wcmp_compatibility_content_tab' ], 10, 3 );
 			add_action( 'wcmp_process_product_object', [ $this, 'edw_save_product_data' ], 10, 2 );
-		}
-		
-		function edw_wcmp_compatibility_filter_tabs( $tabs ) {
-			$tabs['edw_estimate_delivery'] = [
-				'label'    => __( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
-				'target'   => 'edw_estimate_delivery',
-				'class'    => [],
-				'priority' => 100,
-			];
 			
-			return $tabs;
-		}
-		
-		function edw_dokan_compatibility_content_tab() {
-			require_once( EDW_PATH . 'views/dokanmarketplace-metabox.php' );
-		}
-		
-		function edw_wcmp_compatibility_content_tab( $pro_class_obj, $product, $post ) {
-			$GLOBALS["product"] = $product;
-			
-			require_once( EDW_PATH . 'views/wcmarketplace-metabox.php' );
-		}
-		
-		function edw_save_product_data( $product, $post_data ) {
-			if ( isset( $_POST['_edw_max_days'] ) ) {
-				if ( isset( $_POST['_edw_disabled_days'] ) && is_array( $_POST['_edw_disabled_days'] ) ) {
-					// Sanitize disabled days
-					$disabledDays = array_map( 'sanitize_text_field', $_POST['_edw_disabled_days'] );
-					update_post_meta( $post_data['post_ID'], '_edw_disabled_days', $disabledDays );
-				} else {
-					update_post_meta( $post_data['post_ID'], '_edw_disabled_days', [] );
-				}
-				
-				update_post_meta( $post_data['post_ID'], '_edw_max_days',          sanitize_text_field( $_POST['_edw_max_days'] ) );
-				update_post_meta( $post_data['post_ID'], '_edw_days',              sanitize_text_field( $_POST['_edw_days'] ) );
-				update_post_meta( $post_data['post_ID'], '_edw_days_outstock',     sanitize_text_field( $_POST['_edw_days_outstock'] ) );
-				update_post_meta( $post_data['post_ID'], '_edw_max_days_outstock', sanitize_text_field( $_POST['_edw_max_days_outstock'] ) );
-				update_post_meta( $post_data['post_ID'], '_edw_mode',              sanitize_text_field( $_POST['_edw_mode'] ) );
-				
-				if ( isset( $_POST['_edw_overwrite'] ) ) {
-					update_post_meta( $post_data['post_ID'], '_edw_overwrite', '1' );
-				} else {
-					update_post_meta( $post_data['post_ID'], '_edw_overwrite', '0' );
-				}
+			if ( EDW_USE_JS === '0' ) {
+				add_action( EDW_POSITION_SHOW, [ $this, 'edw_show_message' ] );
+			} else {
+				add_action( 'wp_footer', [ $this, 'edw_show_js' ], 99 );
 			}
 		}
 		
-		function edw_add_shortcode() {
-			add_shortcode( 'estimate_delivery', [ $this, 'edw_prepare_shortcode' ] );
-		}
+		// Starting by the callable functions set up in __construct, in order, then the ones they call
 		
-		function edw_prepare_shortcode( $atts ) {
-			global $product;
-			
-			$atts = shortcode_atts( [ 'product' => $product, ], $atts, 'estimate_delivery' );
-			
-			return $this->edw_show_message( $product );
-		}
-		
-		function edw_create_metabox_products() {
-			add_meta_box( 'edw_data_product',
+		public function edw_menu() {
+			add_submenu_page( 'woocommerce',
 				__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
-				[ $this, 'edw_content_metabox_products' ],
-				'product', 'normal', 'high'
-			);
+				__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
+				'manage_options', 'edw-options',
+				[ $this, 'edw_view_page_options' ] );
 		}
 		
-		function edw_content_metabox_products( $post ) {
-			require_once( EDW_PATH . 'views/metabox-product.php' );
+		public function edw_load_textdomain() {
+			load_plugin_textdomain( 'estimated-delivery-for-woocommerce', false, basename( __DIR__ ) . '/languages' );
 		}
 		
-		function edw_save_product( $post_id, $post, $update ) {
+		public function edw_load_style() {
+			if ( is_product() === false ) {
+				return;
+			}
+			
+			wp_enqueue_script( 'edw-scripts', plugins_url( 'assets/edw_scripts.js?edw=true&v=' . EDW_VERSION, __FILE__ ), [ 'jquery' ] );
+			
+			wp_localize_script( 'edw-scripts', 'edwConfig', [ 'url' => admin_url( 'admin-ajax.php' ) ] );
+		}
+		
+		public function edw_save_product( $post_id, $post, $update ) {
 			if ( isset( $_POST['_edw_max_days'] ) ) {
 				if ( isset( $_POST['_edw_disabled_days'] ) && is_array( $_POST['_edw_disabled_days'] ) ) {
 					// Sanitize disabled days
@@ -161,7 +116,64 @@ if ( ! defined( 'EDWCore' ) ) {
 			}
 		}
 		
-		function edw_show_js() {
+		public function edw_create_metabox_products() {
+			add_meta_box( 'edw_data_product',
+				__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
+				[ $this, 'edw_content_metabox_products' ],
+				'product', 'normal', 'high'
+			);
+		}
+		
+		public function edw_add_shortcode() {
+			add_shortcode( 'estimate_delivery', [ $this, 'edw_prepare_shortcode' ] );
+		}
+		
+		public function edw_dokan_compatibility_content_tab() {
+			require_once( EDW_PATH . 'views/dokanmarketplace-metabox.php' );
+		}
+		
+		public function edw_wcmp_compatibility_filter_tabs( $tabs ) {
+			$tabs['edw_estimate_delivery'] = [
+				'label'    => __( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
+				'target'   => 'edw_estimate_delivery',
+				'class'    => [],
+				'priority' => 100,
+			];
+			
+			return $tabs;
+		}
+		
+		public function edw_wcmp_compatibility_content_tab( $pro_class_obj, $product, $post ) {
+			$GLOBALS["product"] = $product;
+			
+			require_once( EDW_PATH . 'views/wcmarketplace-metabox.php' );
+		}
+		
+		public function edw_save_product_data( $product, $post_data ) {
+			if ( isset( $_POST['_edw_max_days'] ) ) {
+				if ( isset( $_POST['_edw_disabled_days'] ) && is_array( $_POST['_edw_disabled_days'] ) ) {
+					// Sanitize disabled days
+					$disabledDays = array_map( 'sanitize_text_field', $_POST['_edw_disabled_days'] );
+					update_post_meta( $post_data['post_ID'], '_edw_disabled_days', $disabledDays );
+				} else {
+					update_post_meta( $post_data['post_ID'], '_edw_disabled_days', [] );
+				}
+				
+				update_post_meta( $post_data['post_ID'], '_edw_max_days',          sanitize_text_field( $_POST['_edw_max_days'] ) );
+				update_post_meta( $post_data['post_ID'], '_edw_days',              sanitize_text_field( $_POST['_edw_days'] ) );
+				update_post_meta( $post_data['post_ID'], '_edw_days_outstock',     sanitize_text_field( $_POST['_edw_days_outstock'] ) );
+				update_post_meta( $post_data['post_ID'], '_edw_max_days_outstock', sanitize_text_field( $_POST['_edw_max_days_outstock'] ) );
+				update_post_meta( $post_data['post_ID'], '_edw_mode',              sanitize_text_field( $_POST['_edw_mode'] ) );
+				
+				if ( isset( $_POST['_edw_overwrite'] ) ) {
+					update_post_meta( $post_data['post_ID'], '_edw_overwrite', '1' );
+				} else {
+					update_post_meta( $post_data['post_ID'], '_edw_overwrite', '0' );
+				}
+			}
+		}
+		
+		public function edw_show_js() {
 			if ( is_product() === true ) {
 				global $post;
 				
@@ -172,29 +184,19 @@ if ( ! defined( 'EDWCore' ) ) {
 			}
 		}
 		
-		function edw_load_style() {
-			if ( is_product() === false ) {
-				return;
-			}
+		public function edw_prepare_shortcode( $atts ) {
+			global $product;
 			
-			wp_enqueue_script( 'edw-scripts', plugins_url( 'assets/edw_scripts.js?edw=true&v=' . EDW_VERSION, __FILE__ ), [ 'jquery' ] );
+			$atts = shortcode_atts( [ 'product' => $product, ], $atts, 'estimate_delivery' );
 			
-			wp_localize_script( 'edw-scripts', 'edwConfig', [ 'url' => admin_url( 'admin-ajax.php' ) ] );
+			return $this->edw_show_message( $product );
 		}
 		
-		function edw_load_textdomain() {
-			load_plugin_textdomain( 'estimated-delivery-for-woocommerce', false, basename( __DIR__ ) . '/languages' );
+		public function edw_content_metabox_products( $post ) {
+			require_once( EDW_PATH . 'views/metabox-product.php' );
 		}
 		
-		function edw_menu() {
-			add_submenu_page( 'woocommerce',
-				__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
-				__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
-				'manage_options', 'edw-options',
-				[ $this, 'edw_view_page_options' ] );
-		}
-		
-		function edw_view_page_options() {
+		public function edw_view_page_options() {
 			self::$positions = array(
 				'disabled'                                  => __( 'Disabled, use shortcode',          'estimated-delivery-for-woocommerce' ),
 				'woocommerce_after_add_to_cart_button'      => __( 'After cart button',                'estimated-delivery-for-woocommerce' ),
@@ -210,56 +212,7 @@ if ( ! defined( 'EDWCore' ) ) {
 			require_once( EDW_PATH . 'views/options.php' );
 		}
 		
-		private function edw_get_date( $disabledDays, $daysEstimated, $dateCheck = false ) {
-			if ( count( $disabledDays ) === 7 ) {
-				return false;
-			}
-			
-			if ( ! $dateCheck ) {
-				$dateCheck = date( 'Y-m-d', strtotime( ' + ' . $daysEstimated . ' days' ) );
-			} else {
-				$dateCheck = date( 'Y-m-d', strtotime( $dateCheck . ' + 1 days' ) );
-			}
-			
-			$filterDisabled = date( 'D', strtotime( $dateCheck ) );
-			
-			if ( in_array( $filterDisabled, $disabledDays, true ) ) {
-				$dateCheck = $this->edw_get_date( $disabledDays, $daysEstimated, $dateCheck );
-			}
-			
-			return $dateCheck;
-		}
-		
-		/**
-		 * Check dates if one element (day, month or year) changes between them
-		 *
-		 * @param  string  $date1
-		 * @param  string  $date2
-		 *
-		 * @return array
-		 * @since 1.0.2
-		 */
-		private function checkDates( $date1, $date2 ) {
-			$month = false;
-			$day   = false;
-			$year  = false;
-			
-			if ( date( 'm', strtotime( $date1 ) ) !== date( 'm', strtotime( $date2 ) ) ) {
-				$month = true;
-			}
-			
-			if ( date( 'd', strtotime( $date1 ) ) !== date( 'd', strtotime( $date2 ) ) ) {
-				$day = true;
-			}
-			
-			if ( date( 'Y', strtotime( $date1 ) ) !== date( 'Y', strtotime( $date2 ) ) ) {
-				$year = true;
-			}
-			
-			return [ $day, $month, $year ];
-		}
-		
-		function edw_show_message( $productParam = false ) {
+		public function edw_show_message( $productParam = false ) {
 			global $product;
 			
 			$returnResult    = false;
@@ -429,6 +382,55 @@ if ( ! defined( 'EDWCore' ) ) {
 			}
 			
 			return '';
+		}
+		
+		private function edw_get_date( $disabledDays, $daysEstimated, $dateCheck = false ) {
+			if ( count( $disabledDays ) === 7 ) {
+				return false;
+			}
+			
+			if ( ! $dateCheck ) {
+				$dateCheck = date( 'Y-m-d', strtotime( ' + ' . $daysEstimated . ' days' ) );
+			} else {
+				$dateCheck = date( 'Y-m-d', strtotime( $dateCheck . ' + 1 days' ) );
+			}
+			
+			$filterDisabled = date( 'D', strtotime( $dateCheck ) );
+			
+			if ( in_array( $filterDisabled, $disabledDays, true ) ) {
+				$dateCheck = $this->edw_get_date( $disabledDays, $daysEstimated, $dateCheck );
+			}
+			
+			return $dateCheck;
+		}
+		
+		/**
+		 * Check dates if one element (day, month or year) changes between them
+		 *
+		 * @param  string  $date1
+		 * @param  string  $date2
+		 *
+		 * @return array
+		 * @since 1.0.2
+		 */
+		private function checkDates( $date1, $date2 ) {
+			$month = false;
+			$day   = false;
+			$year  = false;
+			
+			if ( date( 'm', strtotime( $date1 ) ) !== date( 'm', strtotime( $date2 ) ) ) {
+				$month = true;
+			}
+			
+			if ( date( 'd', strtotime( $date1 ) ) !== date( 'd', strtotime( $date2 ) ) ) {
+				$day = true;
+			}
+			
+			if ( date( 'Y', strtotime( $date1 ) ) !== date( 'Y', strtotime( $date2 ) ) ) {
+				$year = true;
+			}
+			
+			return [ $day, $month, $year ];
 		}
 	}
 }
