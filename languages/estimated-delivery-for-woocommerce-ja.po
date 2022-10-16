@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-10-15 22:00+0200\n"
-"PO-Revision-Date: 2022-10-15 22:02+0200\n"
+"POT-Creation-Date: 2022-10-16 20:36+0200\n"
+"PO-Revision-Date: 2022-10-16 20:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -15,265 +15,263 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: estimated-delivery-woocommerce.php:70 estimated-delivery-woocommerce.php:127
-#: estimated-delivery-woocommerce.php:191
-#: estimated-delivery-woocommerce.php:192
+#: classes/EDWCore.php:47 classes/EDWCore.php:48 classes/EDWCore.php:96
+#: classes/EDWCore.php:112
 msgid "Estimated Delivery"
 msgstr "配送予定"
 
-#: estimated-delivery-woocommerce.php:199
+#: classes/EDWCore.php:176
 #, fuzzy
 msgid "Disabled, use shortcode"
 msgstr "無効、ショートコードを使用"
 
-#: estimated-delivery-woocommerce.php:200
+#: classes/EDWCore.php:177
 #, fuzzy
 msgid "After cart button"
 msgstr "カート後ボタン"
 
-#: estimated-delivery-woocommerce.php:201
+#: classes/EDWCore.php:178
 #, fuzzy
 msgid "Before cart button"
 msgstr "カートの前ボタン"
 
-#: estimated-delivery-woocommerce.php:202
+#: classes/EDWCore.php:179
 msgid "After product meta"
 msgstr "商品メタの後"
 
-#: estimated-delivery-woocommerce.php:203
+#: classes/EDWCore.php:180
 msgid "Before product summary"
 msgstr "基本的な商品概要の前"
 
-#: estimated-delivery-woocommerce.php:204
+#: classes/EDWCore.php:181
 msgid "After product summary"
 msgstr "基本的な商品概要の後"
 
-#: estimated-delivery-woocommerce.php:205
+#: classes/EDWCore.php:182
 #, fuzzy
 msgid "Product Thumbnail (may not work)"
 msgstr "製品のサムネイル(動作しない場合があります)"
 
-#: estimated-delivery-woocommerce.php:352
+#: classes/EDWCore.php:280
 #, fuzzy
 msgid " on"
 msgstr "に"
 
-#: estimated-delivery-woocommerce.php:364
-#: estimated-delivery-woocommerce.php:392
+#: classes/EDWCore.php:292 classes/EDWCore.php:320
 #, fuzzy, php-format
 msgid "this %s, %s"
 msgstr "この%s、%s"
 
-#: estimated-delivery-woocommerce.php:371
-#: estimated-delivery-woocommerce.php:399
+#: classes/EDWCore.php:299 classes/EDWCore.php:327
 #, fuzzy, php-format
 msgid "the next %s, %s"
 msgstr "次の%s、%s"
 
-#: estimated-delivery-woocommerce.php:408
+#: classes/EDWCore.php:336
 #, fuzzy, php-format
 msgid "Estimated delivery%s %s"
 msgstr "配達予定%s %s"
 
-#: estimated-delivery-woocommerce.php:412
+#: classes/EDWCore.php:340
 #, fuzzy, php-format
 msgid "Guaranteed delivery%s %s"
 msgstr "保証された配達%s %s"
 
-#: estimated-delivery-woocommerce.php:421
+#: classes/EDWCore.php:349
 #, fuzzy
 msgid "Unsupported mode"
 msgstr "サポートされていないモード"
 
-#: views/dokanmarketplace-metabox.php:25 views/metabox-product.php:27
-#: views/options.php:188 views/wcmarketplace-metabox.php:22
+#: views/dokanmarketplace-metabox.php:40 views/metabox-product.php:36
+#: views/wcmarketplace-metabox.php:37
+#, fuzzy
+msgid "Overwrite general settings"
+msgstr "一般設定を上書きする"
+
+#: views/dokanmarketplace-metabox.php:52 views/metabox-product.php:48
+#: views/options.php:197 views/wcmarketplace-metabox.php:49
 #, fuzzy
 msgid "Days for Delivery"
 msgstr "配達日数"
 
-#: views/dokanmarketplace-metabox.php:33 views/metabox-product.php:35
-#: views/options.php:196 views/wcmarketplace-metabox.php:30
+#: views/dokanmarketplace-metabox.php:61 views/metabox-product.php:57
+#: views/options.php:206 views/wcmarketplace-metabox.php:58
 #, fuzzy
 msgid "Max Days for Delivery"
 msgstr "配達の最大日数"
 
-#: views/dokanmarketplace-metabox.php:34 views/dokanmarketplace-metabox.php:51
-#: views/dokanmarketplace-metabox.php:68 views/metabox-product.php:36
-#: views/metabox-product.php:53 views/metabox-product.php:70
-#: views/options.php:197 views/options.php:214 views/options.php:231
-#: views/wcmarketplace-metabox.php:31 views/wcmarketplace-metabox.php:48
-#: views/wcmarketplace-metabox.php:65
+#: views/dokanmarketplace-metabox.php:62 views/dokanmarketplace-metabox.php:81
+#: views/dokanmarketplace-metabox.php:100 views/metabox-product.php:58
+#: views/metabox-product.php:77 views/metabox-product.php:96
+#: views/options.php:207 views/options.php:226 views/options.php:245
+#: views/wcmarketplace-metabox.php:59 views/wcmarketplace-metabox.php:78
+#: views/wcmarketplace-metabox.php:97
 #, fuzzy
 msgid "Set 0 for disable. If this set more than 0 days, it will show a range."
 msgstr ""
 "無効にするには 0 を設定します。この設定が 0 日を超えると、範囲が表示されま"
 "す。"
 
-#: views/dokanmarketplace-metabox.php:42 views/metabox-product.php:44
-#: views/options.php:205 views/wcmarketplace-metabox.php:39
+#: views/dokanmarketplace-metabox.php:71 views/metabox-product.php:67
+#: views/options.php:216 views/wcmarketplace-metabox.php:68
 #, fuzzy
 msgid "Days for Delivery out of stock"
 msgstr "配達のための日数 在庫切れ"
 
-#: views/dokanmarketplace-metabox.php:50 views/metabox-product.php:52
-#: views/options.php:213 views/wcmarketplace-metabox.php:47
+#: views/dokanmarketplace-metabox.php:80 views/metabox-product.php:76
+#: views/options.php:225 views/wcmarketplace-metabox.php:77
 #, fuzzy
 msgid "Max Days for Delivery out of stock"
 msgstr "出荷の最大日数 在庫切れ"
 
-#: views/dokanmarketplace-metabox.php:59 views/metabox-product.php:61
-#: views/options.php:222 views/wcmarketplace-metabox.php:56
+#: views/dokanmarketplace-metabox.php:90 views/metabox-product.php:86
+#: views/options.php:235 views/wcmarketplace-metabox.php:87
 #, fuzzy
 msgid "Days for Delivery Backorders"
 msgstr "配送バックオーダーの日数"
 
-#: views/dokanmarketplace-metabox.php:67 views/metabox-product.php:69
-#: views/options.php:230 views/wcmarketplace-metabox.php:64
+#: views/dokanmarketplace-metabox.php:99 views/metabox-product.php:95
+#: views/options.php:244 views/wcmarketplace-metabox.php:96
 #, fuzzy
 msgid "Max Days for Delivery Backorders"
 msgstr "配送バックオーダーの最大日数"
 
-#: views/dokanmarketplace-metabox.php:76 views/metabox-product.php:78
-#: views/options.php:239 views/wcmarketplace-metabox.php:73
+#: views/dokanmarketplace-metabox.php:109 views/metabox-product.php:105
+#: views/options.php:254 views/wcmarketplace-metabox.php:106
 #, fuzzy
 msgid "Estimated or Guaranteed"
 msgstr "推定または保証"
 
-#: views/dokanmarketplace-metabox.php:77 views/metabox-product.php:79
-#: views/options.php:240 views/wcmarketplace-metabox.php:74
+#: views/dokanmarketplace-metabox.php:110 views/metabox-product.php:106
+#: views/options.php:255 views/wcmarketplace-metabox.php:107
 #, fuzzy
 msgid "The message will change."
 msgstr "メッセージが変わります。"
 
-#: views/dokanmarketplace-metabox.php:82 views/metabox-product.php:84
-#: views/options.php:245 views/wcmarketplace-metabox.php:79
+#: views/dokanmarketplace-metabox.php:115 views/metabox-product.php:111
+#: views/options.php:260 views/wcmarketplace-metabox.php:112
 #, fuzzy
 msgid "Estimated"
 msgstr "推定"
 
-#: views/dokanmarketplace-metabox.php:83 views/metabox-product.php:85
-#: views/options.php:246 views/wcmarketplace-metabox.php:80
+#: views/dokanmarketplace-metabox.php:116 views/metabox-product.php:112
+#: views/options.php:261 views/wcmarketplace-metabox.php:113
 #, fuzzy
 msgid "Guaranteed"
 msgstr "折り紙付き"
 
-#: views/dokanmarketplace-metabox.php:84 views/metabox-product.php:86
-#: views/options.php:247 views/wcmarketplace-metabox.php:81
+#: views/dokanmarketplace-metabox.php:117 views/metabox-product.php:113
+#: views/options.php:262 views/wcmarketplace-metabox.php:114
 msgid "Custom string"
 msgstr "カスタム文字列"
 
-#: views/dokanmarketplace-metabox.php:90 views/metabox-product.php:92
-#: views/options.php:253 views/wcmarketplace-metabox.php:87
+#: views/dokanmarketplace-metabox.php:123 views/metabox-product.php:119
+#: views/options.php:268 views/wcmarketplace-metabox.php:120
 #, fuzzy
 msgid "Custom mode string (if selected above)"
 msgstr "カスタムモード文字列(上記で選択した場合)"
 
-#: views/dokanmarketplace-metabox.php:91 views/metabox-product.php:93
-#: views/options.php:254 views/wcmarketplace-metabox.php:88
+#: views/dokanmarketplace-metabox.php:124 views/metabox-product.php:120
+#: views/options.php:269 views/wcmarketplace-metabox.php:121
 #, fuzzy
 msgid "Define your own mode here"
 msgstr "ここで独自のモードを定義する"
 
-#: views/dokanmarketplace-metabox.php:99 views/metabox-product.php:101
-#: views/options.php:262 views/wcmarketplace-metabox.php:96
+#: views/dokanmarketplace-metabox.php:133 views/metabox-product.php:129
+#: views/options.php:278 views/wcmarketplace-metabox.php:130
 #, fuzzy
 msgid "Days disabled"
 msgstr "無効日数"
 
-#: views/dokanmarketplace-metabox.php:100 views/metabox-product.php:102
-#: views/options.php:263 views/wcmarketplace-metabox.php:97
+#: views/dokanmarketplace-metabox.php:134 views/metabox-product.php:130
+#: views/options.php:279 views/wcmarketplace-metabox.php:131
 #, fuzzy
 msgid "Select the days that NO shipments are made."
 msgstr "出荷を行わない日を選択します。"
 
-#: views/dokanmarketplace-metabox.php:105 views/metabox-product.php:107
-#: views/options.php:268 views/wcmarketplace-metabox.php:102
+#: views/dokanmarketplace-metabox.php:139 views/metabox-product.php:135
+#: views/options.php:284 views/wcmarketplace-metabox.php:136
 msgid "Monday"
 msgstr "月曜日"
 
-#: views/dokanmarketplace-metabox.php:110 views/metabox-product.php:112
-#: views/options.php:273 views/wcmarketplace-metabox.php:107
+#: views/dokanmarketplace-metabox.php:144 views/metabox-product.php:140
+#: views/options.php:289 views/wcmarketplace-metabox.php:141
 msgid "Tuesday"
 msgstr "火曜日"
 
-#: views/dokanmarketplace-metabox.php:115 views/metabox-product.php:117
-#: views/options.php:278 views/wcmarketplace-metabox.php:112
+#: views/dokanmarketplace-metabox.php:149 views/metabox-product.php:145
+#: views/options.php:294 views/wcmarketplace-metabox.php:146
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: views/dokanmarketplace-metabox.php:120 views/metabox-product.php:122
-#: views/options.php:283 views/wcmarketplace-metabox.php:117
+#: views/dokanmarketplace-metabox.php:154 views/metabox-product.php:150
+#: views/options.php:299 views/wcmarketplace-metabox.php:151
 msgid "Thursday"
 msgstr "木曜日"
 
-#: views/dokanmarketplace-metabox.php:125 views/metabox-product.php:127
-#: views/options.php:288 views/wcmarketplace-metabox.php:122
+#: views/dokanmarketplace-metabox.php:159 views/metabox-product.php:155
+#: views/options.php:304 views/wcmarketplace-metabox.php:156
 msgid "Friday"
 msgstr "金曜日"
 
-#: views/dokanmarketplace-metabox.php:130 views/metabox-product.php:132
-#: views/options.php:293 views/wcmarketplace-metabox.php:127
+#: views/dokanmarketplace-metabox.php:164 views/metabox-product.php:160
+#: views/options.php:309 views/wcmarketplace-metabox.php:161
 msgid "Saturday"
 msgstr "土曜日"
 
-#: views/dokanmarketplace-metabox.php:135 views/metabox-product.php:137
-#: views/options.php:298 views/wcmarketplace-metabox.php:132
+#: views/dokanmarketplace-metabox.php:169 views/metabox-product.php:165
+#: views/options.php:314 views/wcmarketplace-metabox.php:166
 msgid "Sunday"
 msgstr "日曜日"
 
-#: views/metabox-product.php:19
-#, fuzzy
-msgid "Overwrite general settings"
-msgstr "一般設定を上書きする"
-
-#: views/options.php:75
+#: views/options.php:77
 #, fuzzy
 msgid "An error has occurred, try again."
 msgstr "エラーが発生したので、もう一度やり直してください。"
 
-#: views/options.php:79
+#: views/options.php:81
 #, fuzzy
 msgid "Welcome to newsletter :)"
 msgstr "ニュースレター:)へようこそ"
 
-#: views/options.php:121
+#: views/options.php:122
 #, fuzzy
 msgid "Estimated Delivery for Woocommerce"
 msgstr "ウーコマースの推定配送"
 
-#: views/options.php:122
+#: views/options.php:123
 #, fuzzy
 msgid "Show the estimated or guaranteed delivery for the product"
 msgstr "製品の推定配送または保証された配送を表示する"
 
-#: views/options.php:129
+#: views/options.php:131
 #, fuzzy
 msgid "Do you want to receive the latest?"
 msgstr "最新のものを受け取りますか?"
 
-#: views/options.php:130
+#: views/options.php:132
 #, fuzzy
 msgid ""
 "Thank you very much for using our plugin, if you want to receive the latest "
 "news, offers, promotions, discounts, etc ... Sign up for our newsletter. :)"
 msgstr ""
 "あなたが最新のニュース、オファー、プロモーション、割引などを受け取りたい場合"
-"は、私たちのプラグインを使用していただきありがとうございます...ニュースレター"
-"にサインアップしてください。:)"
+"は、私たちのプラグインを使用していただきありがとうございます...ニュースレ"
+"ターにサインアップしてください。:)"
 
-#: views/options.php:132
+#: views/options.php:135
 msgid "Required"
 msgstr "必須"
 
-#: views/options.php:140
+#: views/options.php:144
 msgid "Submit"
 msgstr "送信"
 
-#: views/options.php:140
+#: views/options.php:145
 msgid "Processing"
 msgstr "処理中"
 
-#: views/options.php:151
+#: views/options.php:156
 #, fuzzy
 msgid ""
 "Developing this plugin takes time, so if you like it, we invite you to make "
@@ -284,60 +282,60 @@ msgstr ""
 "たちが開発と更新を続け、ニュースを追加できるように寄付をすることを勧めます、"
 "これは常に無料です。"
 
-#: views/options.php:152
+#: views/options.php:157
 #, fuzzy
 msgid "Make a donation now to help development"
 msgstr "開発を支援するために今すぐ寄付をする"
 
-#: views/options.php:161
+#: views/options.php:167
 msgid "Use AJAX"
 msgstr "AJAXを使用"
 
-#: views/options.php:162
+#: views/options.php:168
 #, fuzzy
 msgid "If your site use cache system, active this option."
 msgstr ""
-"サイトでキャッシュ システムを使用している場合は、このオプションをアクティブに"
-"します。"
+"サイトでキャッシュ システムを使用している場合は、このオプションをアクティブ"
+"にします。"
 
-#: views/options.php:170
+#: views/options.php:177
 #, fuzzy
 msgid "Delivery same day"
 msgstr "配達即日"
 
-#: views/options.php:171
+#: views/options.php:178
 #, fuzzy
 msgid ""
 "When you set 0 in any option the estimated delivery is disabled, activate "
 "this option to allow setting 0 and displaying the estimated date."
 msgstr ""
-"いずれかのオプションで 0 を設定した場合、配送予定日が無効になっている場合は、"
-"このオプションを有効にして 0 を設定し、予定日を表示できるようにします。"
+"いずれかのオプションで 0 を設定した場合、配送予定日が無効になっている場合"
+"は、このオプションを有効にして 0 を設定し、予定日を表示できるようにします。"
 
-#: views/options.php:179
+#: views/options.php:187
 #, fuzzy
 msgid "Use Relative Dates"
 msgstr "相対日付の使用"
 
-#: views/options.php:180
+#: views/options.php:188
 #, fuzzy
 msgid "Only work with current and next week"
 msgstr "現在と来週のみ作業する"
 
-#: views/options.php:303
+#: views/options.php:319
 msgid "Position"
 msgstr "位置"
 
-#: views/options.php:317
+#: views/options.php:334
 msgid "Save"
 msgstr "保存"
 
-#: views/options.php:319
+#: views/options.php:336
 #, fuzzy
 msgid "Need style?"
 msgstr "スタイルが必要ですか?"
 
-#: views/options.php:320
+#: views/options.php:337
 #, fuzzy
 msgid "Enjoy! Paste this CSS code into your Customizer and edit as you like"
 msgstr ""
