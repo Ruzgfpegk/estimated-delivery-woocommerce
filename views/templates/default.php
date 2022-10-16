@@ -85,7 +85,7 @@ if ( ! $this->forcedOverride ) {
 			</th>
 			<td>
 				<label>
-					<select name="_edw_mode">
+					<select name="_edw_mode" style="height: 34px !important;">
 						<option value="1" <?php selected( '1', $this->displayMode ) ?>><?= __( 'Estimated', 'estimated-delivery-for-woocommerce' ) ?></option>
 						<option value="2" <?php selected( '2', $this->displayMode ) ?>><?= __( 'Guaranteed', 'estimated-delivery-for-woocommerce' ) ?></option>
 						<option value="3" <?php selected( '3', $this->displayMode ) ?>><?= __( 'Custom string', 'estimated-delivery-for-woocommerce' ) ?></option>

@@ -121,7 +121,8 @@ class EDWCore {
 	public function edw_wcmp_compatibility_content_tab( $pro_class_obj, $product, $post ) {
 		$GLOBALS["product"] = $product;
 		
-		require_once( EDW_PATH . 'views/wcmarketplace-metabox.php' );
+		$wcmp_metabox = new WCMP_Metabox;
+		$wcmp_metabox->displayForm();
 	}
 	
 	public function edw_save_product_data( $product, $post_data ) {
