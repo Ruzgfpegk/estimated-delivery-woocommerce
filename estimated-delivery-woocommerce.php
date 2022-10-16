@@ -13,6 +13,8 @@
  * Tested WP: 6.0.1
  */
 
+declare( strict_types = 1 );
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
