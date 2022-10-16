@@ -168,7 +168,8 @@ class EDWCore {
 	}
 	
 	public function edw_content_metabox_products( $post ) {
-		require_once( EDW_PATH . 'views/metabox-product.php' );
+		$metabox = new Metabox;
+		$metabox->displayForm();
 	}
 	
 	public function edw_view_page_options() {
