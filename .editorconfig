@@ -9,6 +9,8 @@
 # You can download this file directly
 # to your project from the command-line with
 # curl -O https://gist.githubusercontent.com/salcode/285303f7983ad729b74d13d752214f4c/raw/.editorconfig
+#
+# With customizations for this project
 
 root = true
 
@@ -16,7 +18,7 @@ root = true
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-trim_trailing_whitespace = true
+trim_trailing_whitespace = false
 indent_style = tab
 indent_size = 4
 
