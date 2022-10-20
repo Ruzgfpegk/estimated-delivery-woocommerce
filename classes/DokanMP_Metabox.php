@@ -2,7 +2,7 @@
 declare( strict_types = 1 );
 
 /**
- * Class WCMP_Metabox
+ * Class DokanMP_Metabox
  *
  * The Dokan Marketplace Metabox is how Dokan Marketplace does things.
  * WARNING: This class is untested.
@@ -11,6 +11,8 @@ class DokanMP_Metabox extends BaseForm {
 	public function __construct() {
 		global $post;
 		
+		$this->isGlobal       = false;
+		$this->emptyDefault   = true;
 		$this->forcedOverride = true;
 		$this->template       = 'default';
 		$this->productId      = $post->ID ?? 0;

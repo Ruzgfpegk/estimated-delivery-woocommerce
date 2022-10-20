@@ -15,6 +15,8 @@ class Metabox extends BaseForm {
 		
 		global $post;
 		
+		$this->isGlobal       = false;
+		$this->emptyDefault   = true;
 		$this->forcedOverride = false;
 		$this->template       = 'default';
 		$this->productId      = $post->ID;

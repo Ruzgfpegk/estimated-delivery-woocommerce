@@ -19,12 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-spl_autoload_register( static function( $class ) {
-	include 'classes/' . $class . '.php';
-} );
-
 const EDW_PATH    = __DIR__ . '/';
 const EDW_VERSION = '1.2.7-r5';
+
+spl_autoload_register( static function( $class ) {
+	include EDW_PATH . 'classes/' . $class . '.php';
+} );
+
 
 define( 'EDW_POSITION_SHOW', get_option( '_edw_position', 'woocommerce_after_add_to_cart_button' ) );
 define( 'EDW_USE_JS',        get_option( '_edw_cache',    '0' ) );

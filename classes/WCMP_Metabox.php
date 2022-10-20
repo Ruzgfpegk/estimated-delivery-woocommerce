@@ -11,6 +11,8 @@ class WCMP_Metabox extends BaseForm {
 	public function __construct() {
 		global $product;
 		
+		$this->isGlobal       = false;
+		$this->emptyDefault   = true;
 		$this->forcedOverride = true;
 		$this->template       = 'default';
 		$this->productId      = $product->get_id();

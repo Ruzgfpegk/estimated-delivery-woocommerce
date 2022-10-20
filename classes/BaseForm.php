@@ -28,7 +28,18 @@ abstract class BaseForm {
 	protected $displayMode;
 	
 	/**
-	 * This function is made to be overwritten by form classes to display custom
+	 * @var bool If true, the default value in the template is ignored and
+	 *           replaced by an empty string.
+	 */
+	protected $emptyDefault;
+	
+	/**
+	 * @var bool If true, global settings in the template must be shown
+	 */
+	protected $isGlobal;
+	
+	/**
+	 * This function is made to be overridden by form classes to display custom
 	 * HTML tags before the template if it's used by many forms
 	 *
 	 * @return void
@@ -36,7 +47,7 @@ abstract class BaseForm {
 	protected function displayBeforeForm() { }
 	
 	/**
-	 * This function is made to be overwritten by form classes to display custom
+	 * This function is made to be overridden by form classes to display custom
 	 * HTML tags after the template if it's used by many forms
 	 *
 	 * @return void
@@ -44,8 +55,30 @@ abstract class BaseForm {
 	protected function displayAfterForm() { }
 	
 	/**
+	 * This function is made to be overridden by form classes for non-default cases
+	 *
+	 * @param $key     string The key setting to retrieve
+	 * @param $default mixed  The default value if the result is '' or false
+	 *
+	 * @return mixed
+	 */
+	public function retrieveProperty( string $key, $default = '' ) {
+		if ( $this->isGlobal ) {
+			$val = get_option( $key, $default );
+		} else {
+			$val = get_post_meta( $this->productId, $key, true );
+			
+			if ( ! $val ) {
+				$val = $this->emptyDefault ? '' : $default;
+			}
+		}
+		
+		return $val;
+	}
+	
+	/**
 	 * The usual "get form" method of the classes
-	 * 
+	 *
 	 * @return void
 	 */
 	public function displayForm() {
