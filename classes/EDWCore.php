@@ -15,47 +15,47 @@ class EDWCore {
 	];
 	
 	public function __construct() {
-		add_action( 'admin_menu',     [ $this, 'edw_menu' ] );
-		add_action( 'plugins_loaded', [ $this, 'edw_load_textdomain' ] );
+		add_action( 'admin_menu',     [ $this, 'registerOptionsMenuInWooCommerce' ] );
+		add_action( 'plugins_loaded', [ $this, 'loadTextdomain' ] );
 		
-		add_action( 'wp_enqueue_scripts', [ $this, 'edw_load_style' ] );
-		add_action( 'save_post_product',  [ $this, 'edw_save_product' ], 10, 3 );
-		add_action( 'add_meta_boxes',     [ $this, 'edw_create_metabox_products' ] );
-		add_action( 'init',               [ $this, 'edw_add_shortcode' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'loadStyle' ] );
+		add_action( 'save_post_product',  [ $this, 'saveProduct' ], 10, 3 ); // TODO use woocommerce_update_product instead
+		add_action( 'add_meta_boxes',     [ $this, 'registerMetaboxInProductEdit' ] );
+		add_action( 'init',               [ $this, 'addShortcode' ] );
 		
 		// Dokan Compatibility
-		add_action( 'dokan_new_product_form',                [ $this, 'edw_dokan_compatibility_content_tab' ] );
-		add_action( 'dokan_new_product_after_product_tags',  [ $this, 'edw_dokan_compatibility_content_tab' ] );
-		add_action( 'dokan_product_edit_after_product_tags', [ $this, 'edw_dokan_compatibility_content_tab' ] );
+		add_action( 'dokan_new_product_form',                [ $this, 'showDokanForm' ] );
+		add_action( 'dokan_new_product_after_product_tags',  [ $this, 'showDokanForm' ] );
+		add_action( 'dokan_product_edit_after_product_tags', [ $this, 'showDokanForm' ] );
 		
 		// WCMP Compatiblity
-		add_filter( 'wcmp_product_data_tabs',      [ $this, 'edw_wcmp_compatibility_filter_tabs' ] );
-		add_action( 'wcmp_product_tabs_content',   [ $this, 'edw_wcmp_compatibility_content_tab' ], 10, 3 );
-		add_action( 'wcmp_process_product_object', [ $this, 'edw_save_product_data' ], 10, 2 );
+		add_filter( 'wcmp_product_data_tabs',      [ $this, 'registerFormInWcMpTabs' ] );
+		add_action( 'wcmp_product_tabs_content',   [ $this, 'showWcMpForm' ], 10, 3 );
+		add_action( 'wcmp_process_product_object', [ $this, 'saveProductData' ], 10, 2 );
 		
 		if ( EDW_USE_JS === '0' ) {
-			add_action( EDW_POSITION_SHOW, [ $this, 'edw_show_message' ] );
+			add_action( EDW_POSITION_SHOW, [ $this, 'showEstimationMessage' ] );
 		} else {
-			add_action( 'wp_footer', [ $this, 'edw_show_js' ], 99 );
+			add_action( 'wp_footer', [ $this, 'showJs' ], 99 );
 		}
 	}
 	
 	// Starting by the callable functions set up in __construct, in order, then the ones they call
 	
-	public function edw_menu() {
+	public function registerOptionsMenuInWooCommerce() {
 		add_submenu_page( 'woocommerce',
 			__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
 			__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
 			'manage_options', 'edw-options',
-			[ $this, 'edw_view_page_options' ] );
+			[ $this, 'showOptionsPage' ] );
 	}
 	
-	public function edw_load_textdomain() {
+	public function loadTextdomain() {
 		load_plugin_textdomain( 'estimated-delivery-for-woocommerce', false, basename( __DIR__ ) . '/languages' );
 	}
 	
-	public function edw_load_style() {
-		if ( is_product() === false ) {
+	public function loadStyle() {
+		if ( ! is_product() ) {
 			return;
 		}
 		
@@ -64,7 +64,7 @@ class EDWCore {
 		wp_localize_script( 'edw-scripts', 'edwConfig', [ 'url' => admin_url( 'admin-ajax.php' ) ] );
 	}
 	
-	public function edw_save_product( $post_id, $post, $update ) {
+	public function saveProduct( $post_id, $post, $update ) {
 		if ( isset( $_POST['_edw_max_days'] ) ) {
 			if ( isset( $_POST['_edw_disabled_days'] ) && is_array( $_POST['_edw_disabled_days'] ) ) {
 				// Sanitize disabled days
@@ -91,24 +91,24 @@ class EDWCore {
 		}
 	}
 	
-	public function edw_create_metabox_products() {
+	public function registerMetaboxInProductEdit() {
 		add_meta_box( 'edw_data_product',
 			__( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
-			[ $this, 'edw_content_metabox_products' ],
+			[ $this, 'showMetaboxForm' ],
 			'product', 'normal', 'high'
 		);
 	}
 	
-	public function edw_add_shortcode() {
-		add_shortcode( 'estimate_delivery', [ $this, 'edw_prepare_shortcode' ] );
+	public function addShortcode() {
+		add_shortcode( 'estimate_delivery', [ $this, 'prepareShortcode' ] );
 	}
 	
-	public function edw_dokan_compatibility_content_tab() {
-		$dokanmp_metabox = new DokanMP_Metabox;
-		$dokanmp_metabox->displayForm();
+	public function showDokanForm() {
+		$dokanMpMetabox = new DokanMP_Metabox;
+		$dokanMpMetabox->displayForm();
 	}
 	
-	public function edw_wcmp_compatibility_filter_tabs( $tabs ) {
+	public function registerFormInWcMpTabs( $tabs ) {
 		$tabs['edw_estimate_delivery'] = [
 			'label'    => __( 'Estimated Delivery', 'estimated-delivery-for-woocommerce' ),
 			'target'   => 'edw_estimate_delivery',
@@ -119,14 +119,14 @@ class EDWCore {
 		return $tabs;
 	}
 	
-	public function edw_wcmp_compatibility_content_tab( $pro_class_obj, $product, $post ) {
+	public function showWcMpForm( $pro_class_obj, $product, $post ) {
 		$GLOBALS["product"] = $product;
 		
-		$wcmp_metabox = new WCMP_Metabox;
-		$wcmp_metabox->displayForm();
+		$wcMpMetabox = new WCMP_Metabox;
+		$wcMpMetabox->displayForm();
 	}
 	
-	public function edw_save_product_data( $product, $post_data ) {
+	public function saveProductData( $product, $post_data ) {
 		if ( isset( $_POST['_edw_max_days'] ) ) {
 			if ( isset( $_POST['_edw_disabled_days'] ) && is_array( $_POST['_edw_disabled_days'] ) ) {
 				// Sanitize disabled days
@@ -150,7 +150,7 @@ class EDWCore {
 		}
 	}
 	
-	public function edw_show_js() {
+	public function showJs() {
 		if ( is_product() === true ) {
 			global $post;
 			
@@ -161,21 +161,21 @@ class EDWCore {
 		}
 	}
 	
-	public function edw_prepare_shortcode( $atts ) {
+	public function prepareShortcode( $atts ) {
 		global $product;
 		
-		$atts = shortcode_atts( [ 'product' => $product, ], $atts, 'estimate_delivery' );
+		$atts = shortcode_atts( [ 'product' => $product ], $atts, 'estimate_delivery' );
 		
-		return $this->edw_show_message( $product );
+		return $this->showEstimationMessage( $product );
 	}
 	
-	public function edw_content_metabox_products( $post ) {
+	public function showMetaboxForm() {
 		$metabox = new Metabox;
 		$metabox->displayForm();
 	}
 	
-	public function edw_view_page_options() {
-		self::$positions = array(
+	public function showOptionsPage() {
+		self::$positions = [
 			'disabled'                                  => __( 'Disabled, use shortcode',          'estimated-delivery-for-woocommerce' ),
 			'woocommerce_after_add_to_cart_button'      => __( 'After cart button',                'estimated-delivery-for-woocommerce' ),
 			'woocommerce_before_add_to_cart_button'     => __( 'Before cart button',               'estimated-delivery-for-woocommerce' ),
@@ -183,14 +183,14 @@ class EDWCore {
 			'woocommerce_before_single_product_summary' => __( 'Before product summary',           'estimated-delivery-for-woocommerce' ),
 			'woocommerce_after_single_product_summary'  => __( 'After product summary',            'estimated-delivery-for-woocommerce' ),
 			'woocommerce_product_thumbnails'            => __( 'Product Thumbnail (may not work)', 'estimated-delivery-for-woocommerce' ),
-		);
+		];
 		
 		self::$positions = apply_filters( 'edw_positions', self::$positions );
 		
 		require_once( EDW_PATH . 'views/options.php' );
 	}
 	
-	public function edw_show_message( $productParam = false ) {
+	public function showEstimationMessage( $productParam = false ) : string {
 		global $product;
 		
 		$returnResult    = false;
@@ -274,8 +274,8 @@ class EDWCore {
 			return '';
 		}
 		
-		$minDate = $this->edw_get_date( $disabledDays, $days );
-		$maxDate = $this->edw_get_date( $disabledDays, $maxDays );
+		$minDate = $this->getDateFromNow( $disabledDays, $days );
+		$maxDate = $this->getDateFromNow( $disabledDays, $maxDays );
 		
 		if ( $minDate && $maxDate ) {
 			$wpDateFormat      = get_option( 'date_format' );
@@ -283,18 +283,20 @@ class EDWCore {
 			$elon              = __( ' on', 'estimated-delivery-for-woocommerce' );
 			$date              = date_i18n( (string) ( $wpDateFormat ), strtotime( $minDate ) );
 			
+			// Date format reference: https://www.php.net/manual/en/datetime.format.php
+			
 			if ( $maxDays > 0 ) {
-				list( $d, $m, $y ) = $this->checkDates( $minDate, $maxDate );
+				list( $d, $m, $y ) = $this->getDifferencesBetweenDates( $minDate, $maxDate );
 				
 				if ( ! $d && ! $m && ! $y ) {
-					$thisWeek = date( 'W' );
+					$thisWeek = date( 'W' ); // ISO 8601 week number of year
 					
 					if ( $useRelativeDates && $thisWeek === date( 'W', strtotime( $minDate ) ) ) {
 						$elon = '';
 						$date = sprintf(
 							__( "this %s, %s", "estimated-delivery-for-woocommerce" ),
-							date_i18n( 'l',   strtotime( $minDate ) ),
-							date_i18n( 'j F', strtotime( $minDate ) )
+							date_i18n( 'l',   strtotime( $minDate ) ), // A full textual representation of the day of the week
+							date_i18n( 'j F', strtotime( $minDate ) )  // Day of the month without leading zeros + full textual month
 						);
 					} elseif ( $useRelativeDates && ( $thisWeek + 1 ) == date( 'W', strtotime( $minDate ) ) ) {
 						$elon = '';
@@ -334,23 +336,21 @@ class EDWCore {
 				}
 			}
 			
+			$string = '<div class="edw_date">';
+			
 			if ( $mode === '1' ) {
-				$string = '<div class="edw_date">'
-				          . sprintf( __( 'Estimated delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date )
-				          . '</div>';
+				$string .= sprintf( __( 'Estimated delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date );
 			} elseif ( $mode === '2' ) {
-				$string = '<div class="edw_date">'
-				          . sprintf( __( 'Guaranteed delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date )
-				          . '</div>';
+				$string .= sprintf( __( 'Guaranteed delivery%s %s', 'estimated-delivery-for-woocommerce' ), $elon, $date );
 			} elseif ( $mode === '3' ) {
-				$productModeCustom = get_option( '_edw_mode_custom', 'Custom' );
+				$productModeCustom = get_option( '_edw_mode_custom', '' );
 				
-				$string = '<div class="edw_date">'
-				          . $productModeCustom . ' ' . $date
-				          . '</div>';
+				$string .= $productModeCustom . ' ' . $date;
 			} else {
-				$string = '<div class="edw_date">' . __( 'Unsupported mode', 'estimated-delivery-for-woocommerce' ) . '</div>';
+				$string .= __( 'Unsupported mode', 'estimated-delivery-for-woocommerce' );
 			}
+			
+			$string .= '</div>';
 			
 			if ( $returnResult ) {
 				return $string;
@@ -362,7 +362,7 @@ class EDWCore {
 		return '';
 	}
 	
-	private function edw_get_date( $disabledDays, $daysEstimated, $dateCheck = false ) {
+	private function getDateFromNow( $disabledDays, $daysEstimated, $dateCheck = false ) {
 		if ( count( $disabledDays ) === 7 ) {
 			return false;
 		}
@@ -376,14 +376,14 @@ class EDWCore {
 		$filterDisabled = date( 'D', strtotime( $dateCheck ) );
 		
 		if ( in_array( $filterDisabled, $disabledDays, true ) ) {
-			$dateCheck = $this->edw_get_date( $disabledDays, $daysEstimated, $dateCheck );
+			$dateCheck = $this->getDateFromNow( $disabledDays, $daysEstimated, $dateCheck );
 		}
 		
 		return $dateCheck;
 	}
 	
 	/**
-	 * Check dates if one element (day, month or year) changes between them
+	 * Checks if at least one element (day, month and/or year) changes between two dates
 	 *
 	 * @param  string  $date1
 	 * @param  string  $date2
@@ -391,7 +391,7 @@ class EDWCore {
 	 * @return array
 	 * @since 1.0.2
 	 */
-	private function checkDates( $date1, $date2 ) {
+	private function getDifferencesBetweenDates( $date1, $date2 ) : array {
 		$month = false;
 		$day   = false;
 		$year  = false;

@@ -3,11 +3,11 @@ declare( strict_types = 1 );
 
 class EDW_API {
 	public function __construct() {
-		add_action( 'wp_ajax_nopriv_edw_get_estimate_dates', [ $this, 'edw_get_estimate_dates' ] );
-		add_action( 'wp_ajax_edw_get_estimate_dates',        [ $this, 'edw_get_estimate_dates' ] );
+		add_action( 'wp_ajax_nopriv_edw_get_estimate_dates', [ $this, 'getEstimationDates' ] );
+		add_action( 'wp_ajax_edw_get_estimate_dates',        [ $this, 'getEstimationDates' ] );
 	}
 	
-	public function edw_get_estimate_dates() {
+	public function getEstimationDates() {
 		global $EDWCore;
 		
 		$product = sanitize_text_field( $_POST['product'] );
@@ -19,7 +19,7 @@ class EDW_API {
 		}
 		*/
 		
-		$string = $EDWCore->edw_show_message( $product );
+		$string = $EDWCore->showEstimationMessage( $product );
 		
 		if ( ! $string ) {
 			$res = [];
