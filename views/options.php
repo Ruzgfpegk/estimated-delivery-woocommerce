@@ -28,6 +28,7 @@ if ( isset( $_POST['action'] ) ) {
 			update_option( '_edw_days',                sanitize_text_field( $_POST['_edw_days'] ) );
 			update_option( '_edw_mode',                sanitize_text_field( $_POST['_edw_mode'] ) );
 			update_option( '_edw_mode_custom',         sanitize_text_field( $_POST['_edw_mode_custom'] ) );
+			update_option( '_edw_date_custom',         $_POST['_edw_date_custom'], true ); // sanitize_text_field doesn't work on serialized data
 			update_option( '_edw_days_outstock',       sanitize_text_field( $_POST['_edw_days_outstock'] ) );
 			update_option( '_edw_max_days_outstock',   sanitize_text_field( $_POST['_edw_max_days_outstock'] ) );
 			update_option( '_edw_days_backorders',     sanitize_text_field( $_POST['_edw_days_backorders'] ) );
@@ -91,6 +92,7 @@ $newsletterEstimatedDelivery = get_option( 'estimated-delivery-newsletter', '0' 
 $user                        = wp_get_current_user();
 $disabledDays                = get_option( '_edw_disabled_days', [] );
 $currentPosition             = get_option( '_edw_position', 'woocommerce_after_add_to_cart_button' );
+$customDateFormatting        = get_option( '_edw_date_custom', [] );
 $tab                         = 'general'; // Only one tab for now
 ?>
 <style>
@@ -274,6 +276,80 @@ if ( $tab === 'general' ) {
 						</label>
 					</td>
 				</tr>
+				
+				<tr>
+					<th scope="row"><?= __( 'First date (different days)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[left-d]" value="<?= $customDateFormatting['left-d'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?= __( 'Second date (different days)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[right-d]" value="<?= $customDateFormatting['right-d'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row"><?= __( 'First date (different days and months)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[left-dm]" value="<?= $customDateFormatting['left-dm'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?= __( 'Second date (different days and months)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[right-dm]" value="<?= $customDateFormatting['right-dm'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row"><?= __( 'First date (different days, months and years)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[left-dmy]" value="<?= $customDateFormatting['left-dmy'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><?= __( 'Second date (different days, months and years)', 'estimated-delivery-for-woocommerce') ?>
+						<p class="description"><?= __( 'Use the PHP date() format', 'estimated-delivery-for-woocommerce' ) ?></p>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[right-dmy]" value="<?= $customDateFormatting['right-dmy'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<th scope="row"><?= __( 'Custom separator between dates', 'estimated-delivery-for-woocommerce') ?>
+					</th>
+					<td>
+						<label>
+							<input type="text" name="_edw_date_custom[separator]" value="<?= $customDateFormatting['separator'] ?>"/>
+						</label>
+					</td>
+				</tr>
+				
 				<tr>
 					<th scope="row"><?= __( 'Days disabled', 'estimated-delivery-for-woocommerce' ) ?>
 						<p class="description"><?= __( 'Select the days that NO shipments are made.', 'estimated-delivery-for-woocommerce' ) ?></p>

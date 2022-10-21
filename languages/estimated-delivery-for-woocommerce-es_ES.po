@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: edwoo\n"
-"POT-Creation-Date: 2022-10-16 23:24+0200\n"
-"PO-Revision-Date: 2022-10-16 23:25+0200\n"
+"POT-Creation-Date: 2022-10-22 00:59+0200\n"
+"PO-Revision-Date: 2022-10-22 01:02+0200\n"
 "Last-Translator: Daniel Riera <daniel@taxapro.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -52,52 +52,52 @@ msgstr "Debajo de la galería (Puede no funcionar)"
 msgid " on"
 msgstr " el"
 
-#: classes/EDWCore.php:295 classes/EDWCore.php:323
+#: classes/EDWCore.php:298 classes/EDWCore.php:332
 #, php-format
 msgid "this %s, %s"
 msgstr "este %s, %s"
 
-#: classes/EDWCore.php:302 classes/EDWCore.php:330
+#: classes/EDWCore.php:305 classes/EDWCore.php:339
 #, php-format
 msgid "the next %s, %s"
 msgstr "el próximo %s, %s"
 
-#: classes/EDWCore.php:339
+#: classes/EDWCore.php:349
 #, php-format
 msgid "Estimated delivery%s %s"
 msgstr "Entrega estimada%s %s"
 
-#: classes/EDWCore.php:343
+#: classes/EDWCore.php:351
 #, php-format
 msgid "Guaranteed delivery%s %s"
 msgstr "Entrega Garantizada%s %s"
 
-#: classes/EDWCore.php:352
+#: classes/EDWCore.php:357
 #, fuzzy
 msgid "Unsupported mode"
 msgstr "Modo no compatible"
 
-#: views/options.php:77
+#: views/options.php:78
 msgid "An error has occurred, try again."
 msgstr "Ha ocurrido un error, pruebe de nuevo."
 
-#: views/options.php:81
+#: views/options.php:82
 msgid "Welcome to newsletter :)"
 msgstr "Bienvenid@ al newsletter"
 
-#: views/options.php:122
+#: views/options.php:124
 msgid "Estimated Delivery for Woocommerce"
 msgstr "Entrega Estimada para WooCommerce"
 
-#: views/options.php:123
+#: views/options.php:125
 msgid "Show the estimated or guaranteed delivery for the product"
 msgstr "Muestra la entrega estimada o garantizada por cada producto"
 
-#: views/options.php:131
+#: views/options.php:133
 msgid "Do you want to receive the latest?"
 msgstr "¿Quieres recibir lo último?"
 
-#: views/options.php:132
+#: views/options.php:134
 msgid ""
 "Thank you very much for using our plugin, if you want to receive the latest "
 "news, offers, promotions, discounts, etc ... Sign up for our newsletter. :)"
@@ -105,19 +105,19 @@ msgstr ""
 "Muchas gracias por usar nuestro plugin, si quieres recibir noticias, "
 "ofertas, promociones, descuentos...Inscríbete en nuestro boletín. :)"
 
-#: views/options.php:135
+#: views/options.php:137
 msgid "Required"
 msgstr "Requerido"
 
-#: views/options.php:144
+#: views/options.php:146
 msgid "Submit"
 msgstr "Enviar"
 
-#: views/options.php:145
+#: views/options.php:147
 msgid "Processing"
 msgstr "Procesando"
 
-#: views/options.php:156
+#: views/options.php:158
 msgid ""
 "Developing this plugin takes time, so if you like it, we invite you to make "
 "a donation so that we can continue developing and updating, adding news, "
@@ -127,24 +127,24 @@ msgstr ""
 "invitamos a realizar una donación para que podamos seguir desarrollando y "
 "actualizando, añadiendo novedades, esto será siempre gratis."
 
-#: views/options.php:157
+#: views/options.php:159
 msgid "Make a donation now to help development"
 msgstr "Realiza una donación ahora par ayudar al desarrollo"
 
-#: views/options.php:167
+#: views/options.php:169 views/templates/default.php:28
 msgid "Use AJAX"
 msgstr "Usar AJAX"
 
-#: views/options.php:168
+#: views/options.php:170 views/templates/default.php:29
 msgid "If your site use cache system, active this option."
 msgstr "Si tu sitio usa cache, activa esta opción."
 
-#: views/options.php:177
+#: views/options.php:179 views/templates/default.php:38
 #, fuzzy
 msgid "Delivery same day"
 msgstr "Entrega el mismo día"
 
-#: views/options.php:178
+#: views/options.php:180 views/templates/default.php:39
 #, fuzzy
 msgid ""
 "When you set 0 in any option the estimated delivery is disabled, activate "
@@ -154,131 +154,172 @@ msgstr ""
 "deshabilitada, active esta opción para permitir la configuración 0 y mostrar "
 "la fecha estimada."
 
-#: views/options.php:187
+#: views/options.php:189 views/templates/default.php:48
 msgid "Use Relative Dates"
 msgstr "Usar fechas relativas"
 
-#: views/options.php:188
+#: views/options.php:190 views/templates/default.php:49
 msgid "Only work with current and next week"
 msgstr "Solo funciona con la semana actual y la próxima"
 
-#: views/options.php:197 views/templates/default.php:26
+#: views/options.php:199 views/templates/default.php:76
 msgid "Days for Delivery"
 msgstr "Días para el envío"
 
-#: views/options.php:206 views/templates/default.php:35
+#: views/options.php:208 views/templates/default.php:85
 msgid "Max Days for Delivery"
 msgstr "Máximos días para el envio"
 
-#: views/options.php:207 views/options.php:226 views/options.php:245
-#: views/templates/default.php:36 views/templates/default.php:55
-#: views/templates/default.php:74
+#: views/options.php:209 views/options.php:228 views/options.php:247
+#: views/templates/default.php:86 views/templates/default.php:105
+#: views/templates/default.php:124
 msgid "Set 0 for disable. If this set more than 0 days, it will show a range."
 msgstr ""
 "Establecer en 0 para deshabilitar, si es más de 0 se mostrará un rango."
 
-#: views/options.php:216 views/templates/default.php:45
+#: views/options.php:218 views/templates/default.php:95
 msgid "Days for Delivery out of stock"
 msgstr "Días para el envío (Sin Stock)"
 
-#: views/options.php:225 views/templates/default.php:54
+#: views/options.php:227 views/templates/default.php:104
 msgid "Max Days for Delivery out of stock"
 msgstr "Máximos días para el envio (Sin Stock)"
 
-#: views/options.php:235 views/templates/default.php:64
+#: views/options.php:237 views/templates/default.php:114
 #, fuzzy
 msgid "Days for Delivery Backorders"
 msgstr "Días para el envío (Pedido)"
 
-#: views/options.php:244 views/templates/default.php:73
+#: views/options.php:246 views/templates/default.php:123
 #, fuzzy
 msgid "Max Days for Delivery Backorders"
 msgstr "Máximos días para el envio (Pedido)"
 
-#: views/options.php:254 views/templates/default.php:83
+#: views/options.php:256 views/templates/default.php:133
 msgid "Estimated or Guaranteed"
 msgstr "Estimada o Garantizada"
 
-#: views/options.php:255 views/templates/default.php:84
+#: views/options.php:257 views/templates/default.php:134
 msgid "The message will change."
 msgstr "Esto cambiará el mensaje."
 
-#: views/options.php:260 views/templates/default.php:89
+#: views/options.php:262 views/templates/default.php:139
 msgid "Estimated"
 msgstr "Estimada"
 
-#: views/options.php:261 views/templates/default.php:90
+#: views/options.php:263 views/templates/default.php:140
 msgid "Guaranteed"
 msgstr "Garantizada"
 
-#: views/options.php:262 views/templates/default.php:91
+#: views/options.php:264 views/templates/default.php:141
 #, fuzzy
 msgid "Custom string"
 msgstr "Cadena personalizada"
 
-#: views/options.php:268 views/templates/default.php:97
+#: views/options.php:270 views/templates/default.php:147
 #, fuzzy
 msgid "Custom mode string (if selected above)"
 msgstr "Cadena de modo personalizado (si se selecciona anteriormente)"
 
-#: views/options.php:269 views/templates/default.php:98
+#: views/options.php:271 views/templates/default.php:148
 #, fuzzy
 msgid "Define your own mode here"
 msgstr "Define tu propio modo aquí"
 
-#: views/options.php:278 views/templates/default.php:107
+#: views/options.php:281
+#, fuzzy
+msgid "First date (different days)"
+msgstr "Primera cita (días diferentes)"
+
+#: views/options.php:282 views/options.php:292 views/options.php:303
+#: views/options.php:313 views/options.php:324 views/options.php:334
+#, fuzzy
+msgid "Use the PHP date() format"
+msgstr "Usar el formato date() de PHP"
+
+#: views/options.php:291
+#, fuzzy
+msgid "Second date (different days)"
+msgstr "Segunda cita (días diferentes)"
+
+#: views/options.php:302
+#, fuzzy
+msgid "First date (different days and months)"
+msgstr "Primera cita (diferentes días y meses)"
+
+#: views/options.php:312
+#, fuzzy
+msgid "Second date (different days and months)"
+msgstr "Segunda cita (diferentes días y meses)"
+
+#: views/options.php:323
+#, fuzzy
+msgid "First date (different days, months and years)"
+msgstr "Primera fecha (diferentes días, meses y años)"
+
+#: views/options.php:333
+#, fuzzy
+msgid "Second date (different days, months and years)"
+msgstr "Segunda fecha (diferentes días, meses y años)"
+
+#: views/options.php:344
+#, fuzzy
+msgid "Custom separator between dates"
+msgstr "Separador personalizado entre fechas"
+
+#: views/options.php:354 views/templates/default.php:157
 msgid "Days disabled"
 msgstr "Días Deshabilitados"
 
-#: views/options.php:279 views/templates/default.php:108
+#: views/options.php:355 views/templates/default.php:158
 msgid "Select the days that NO shipments are made."
 msgstr "Selecciona los días que NO se realizan envíos."
 
-#: views/options.php:284 views/templates/default.php:113
+#: views/options.php:360 views/templates/default.php:163
 msgid "Monday"
 msgstr "Lunes"
 
-#: views/options.php:289 views/templates/default.php:118
+#: views/options.php:365 views/templates/default.php:168
 msgid "Tuesday"
 msgstr "Martes"
 
-#: views/options.php:294 views/templates/default.php:123
+#: views/options.php:370 views/templates/default.php:173
 msgid "Wednesday"
 msgstr "Miercoles"
 
-#: views/options.php:299 views/templates/default.php:128
+#: views/options.php:375 views/templates/default.php:178
 msgid "Thursday"
 msgstr "Jueves"
 
-#: views/options.php:304 views/templates/default.php:133
+#: views/options.php:380 views/templates/default.php:183
 msgid "Friday"
 msgstr "Viernes"
 
-#: views/options.php:309 views/templates/default.php:138
+#: views/options.php:385 views/templates/default.php:188
 msgid "Saturday"
 msgstr "Sábado"
 
-#: views/options.php:314 views/templates/default.php:143
+#: views/options.php:390 views/templates/default.php:193
 msgid "Sunday"
 msgstr "Domingo"
 
-#: views/options.php:319
+#: views/options.php:395 views/templates/default.php:14
 msgid "Position"
 msgstr "Posición"
 
-#: views/options.php:334
+#: views/options.php:410
 msgid "Save"
 msgstr "Guardar"
 
-#: views/options.php:336
+#: views/options.php:412
 msgid "Need style?"
 msgstr "Necesitas dar estilos?"
 
-#: views/options.php:337
+#: views/options.php:413
 msgid "Enjoy! Paste this CSS code into your Customizer and edit as you like"
 msgstr ""
 "A disfrutar, pega este código en el personalizador CSS y edítalo a tu gusto"
 
-#: views/templates/default.php:14
+#: views/templates/default.php:64
 msgid "Overwrite general settings"
 msgstr "Sobreescribir configuración"

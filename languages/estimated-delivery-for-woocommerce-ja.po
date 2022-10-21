@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-10-16 23:24+0200\n"
-"PO-Revision-Date: 2022-10-16 23:24+0200\n"
+"POT-Creation-Date: 2022-10-22 00:59+0200\n"
+"PO-Revision-Date: 2022-10-22 01:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -57,57 +57,57 @@ msgstr "製品のサムネイル(動作しない場合があります)"
 msgid " on"
 msgstr "に"
 
-#: classes/EDWCore.php:295 classes/EDWCore.php:323
+#: classes/EDWCore.php:298 classes/EDWCore.php:332
 #, fuzzy, php-format
 msgid "this %s, %s"
 msgstr "この%s、%s"
 
-#: classes/EDWCore.php:302 classes/EDWCore.php:330
+#: classes/EDWCore.php:305 classes/EDWCore.php:339
 #, fuzzy, php-format
 msgid "the next %s, %s"
 msgstr "次の%s、%s"
 
-#: classes/EDWCore.php:339
+#: classes/EDWCore.php:349
 #, fuzzy, php-format
 msgid "Estimated delivery%s %s"
 msgstr "配達予定%s %s"
 
-#: classes/EDWCore.php:343
+#: classes/EDWCore.php:351
 #, fuzzy, php-format
 msgid "Guaranteed delivery%s %s"
 msgstr "保証された配達%s %s"
 
-#: classes/EDWCore.php:352
+#: classes/EDWCore.php:357
 #, fuzzy
 msgid "Unsupported mode"
 msgstr "サポートされていないモード"
 
-#: views/options.php:77
+#: views/options.php:78
 #, fuzzy
 msgid "An error has occurred, try again."
 msgstr "エラーが発生したので、もう一度やり直してください。"
 
-#: views/options.php:81
+#: views/options.php:82
 #, fuzzy
 msgid "Welcome to newsletter :)"
 msgstr "ニュースレター:)へようこそ"
 
-#: views/options.php:122
+#: views/options.php:124
 #, fuzzy
 msgid "Estimated Delivery for Woocommerce"
 msgstr "ウーコマースの推定配送"
 
-#: views/options.php:123
+#: views/options.php:125
 #, fuzzy
 msgid "Show the estimated or guaranteed delivery for the product"
 msgstr "製品の推定配送または保証された配送を表示する"
 
-#: views/options.php:131
+#: views/options.php:133
 #, fuzzy
 msgid "Do you want to receive the latest?"
 msgstr "最新のものを受け取りますか?"
 
-#: views/options.php:132
+#: views/options.php:134
 #, fuzzy
 msgid ""
 "Thank you very much for using our plugin, if you want to receive the latest "
@@ -117,19 +117,19 @@ msgstr ""
 "は、私たちのプラグインを使用していただきありがとうございます...ニュースレ"
 "ターにサインアップしてください。:)"
 
-#: views/options.php:135
+#: views/options.php:137
 msgid "Required"
 msgstr "必須"
 
-#: views/options.php:144
+#: views/options.php:146
 msgid "Submit"
 msgstr "送信"
 
-#: views/options.php:145
+#: views/options.php:147
 msgid "Processing"
 msgstr "処理中"
 
-#: views/options.php:156
+#: views/options.php:158
 #, fuzzy
 msgid ""
 "Developing this plugin takes time, so if you like it, we invite you to make "
@@ -140,28 +140,28 @@ msgstr ""
 "たちが開発と更新を続け、ニュースを追加できるように寄付をすることを勧めます、"
 "これは常に無料です。"
 
-#: views/options.php:157
+#: views/options.php:159
 #, fuzzy
 msgid "Make a donation now to help development"
 msgstr "開発を支援するために今すぐ寄付をする"
 
-#: views/options.php:167
+#: views/options.php:169 views/templates/default.php:28
 msgid "Use AJAX"
 msgstr "AJAXを使用"
 
-#: views/options.php:168
+#: views/options.php:170 views/templates/default.php:29
 #, fuzzy
 msgid "If your site use cache system, active this option."
 msgstr ""
 "サイトでキャッシュ システムを使用している場合は、このオプションをアクティブ"
 "にします。"
 
-#: views/options.php:177
+#: views/options.php:179 views/templates/default.php:38
 #, fuzzy
 msgid "Delivery same day"
 msgstr "配達即日"
 
-#: views/options.php:178
+#: views/options.php:180 views/templates/default.php:39
 #, fuzzy
 msgid ""
 "When you set 0 in any option the estimated delivery is disabled, activate "
@@ -170,147 +170,188 @@ msgstr ""
 "いずれかのオプションで 0 を設定した場合、配送予定日が無効になっている場合"
 "は、このオプションを有効にして 0 を設定し、予定日を表示できるようにします。"
 
-#: views/options.php:187
+#: views/options.php:189 views/templates/default.php:48
 #, fuzzy
 msgid "Use Relative Dates"
 msgstr "相対日付の使用"
 
-#: views/options.php:188
+#: views/options.php:190 views/templates/default.php:49
 #, fuzzy
 msgid "Only work with current and next week"
 msgstr "現在と来週のみ作業する"
 
-#: views/options.php:197 views/templates/default.php:26
+#: views/options.php:199 views/templates/default.php:76
 #, fuzzy
 msgid "Days for Delivery"
 msgstr "配達日数"
 
-#: views/options.php:206 views/templates/default.php:35
+#: views/options.php:208 views/templates/default.php:85
 #, fuzzy
 msgid "Max Days for Delivery"
 msgstr "配達の最大日数"
 
-#: views/options.php:207 views/options.php:226 views/options.php:245
-#: views/templates/default.php:36 views/templates/default.php:55
-#: views/templates/default.php:74
+#: views/options.php:209 views/options.php:228 views/options.php:247
+#: views/templates/default.php:86 views/templates/default.php:105
+#: views/templates/default.php:124
 #, fuzzy
 msgid "Set 0 for disable. If this set more than 0 days, it will show a range."
 msgstr ""
 "無効にするには 0 を設定します。この設定が 0 日を超えると、範囲が表示されま"
 "す。"
 
-#: views/options.php:216 views/templates/default.php:45
+#: views/options.php:218 views/templates/default.php:95
 #, fuzzy
 msgid "Days for Delivery out of stock"
 msgstr "配達のための日数 在庫切れ"
 
-#: views/options.php:225 views/templates/default.php:54
+#: views/options.php:227 views/templates/default.php:104
 #, fuzzy
 msgid "Max Days for Delivery out of stock"
 msgstr "出荷の最大日数 在庫切れ"
 
-#: views/options.php:235 views/templates/default.php:64
+#: views/options.php:237 views/templates/default.php:114
 #, fuzzy
 msgid "Days for Delivery Backorders"
 msgstr "配送バックオーダーの日数"
 
-#: views/options.php:244 views/templates/default.php:73
+#: views/options.php:246 views/templates/default.php:123
 #, fuzzy
 msgid "Max Days for Delivery Backorders"
 msgstr "配送バックオーダーの最大日数"
 
-#: views/options.php:254 views/templates/default.php:83
+#: views/options.php:256 views/templates/default.php:133
 #, fuzzy
 msgid "Estimated or Guaranteed"
 msgstr "推定または保証"
 
-#: views/options.php:255 views/templates/default.php:84
+#: views/options.php:257 views/templates/default.php:134
 #, fuzzy
 msgid "The message will change."
 msgstr "メッセージが変わります。"
 
-#: views/options.php:260 views/templates/default.php:89
+#: views/options.php:262 views/templates/default.php:139
 #, fuzzy
 msgid "Estimated"
 msgstr "推定"
 
-#: views/options.php:261 views/templates/default.php:90
+#: views/options.php:263 views/templates/default.php:140
 #, fuzzy
 msgid "Guaranteed"
 msgstr "折り紙付き"
 
-#: views/options.php:262 views/templates/default.php:91
+#: views/options.php:264 views/templates/default.php:141
 msgid "Custom string"
 msgstr "カスタム文字列"
 
-#: views/options.php:268 views/templates/default.php:97
+#: views/options.php:270 views/templates/default.php:147
 #, fuzzy
 msgid "Custom mode string (if selected above)"
 msgstr "カスタムモード文字列(上記で選択した場合)"
 
-#: views/options.php:269 views/templates/default.php:98
+#: views/options.php:271 views/templates/default.php:148
 #, fuzzy
 msgid "Define your own mode here"
 msgstr "ここで独自のモードを定義する"
 
-#: views/options.php:278 views/templates/default.php:107
+#: views/options.php:281
+#, fuzzy
+msgid "First date (different days)"
+msgstr "最初の日付 (異なる日)"
+
+#: views/options.php:282 views/options.php:292 views/options.php:303
+#: views/options.php:313 views/options.php:324 views/options.php:334
+#, fuzzy
+msgid "Use the PHP date() format"
+msgstr "PHP の date() フォーマットを使用する"
+
+#: views/options.php:291
+#, fuzzy
+msgid "Second date (different days)"
+msgstr "2 回目の日付 (異なる日)"
+
+#: views/options.php:302
+#, fuzzy
+msgid "First date (different days and months)"
+msgstr "最初の日付 (異なる日と月)"
+
+#: views/options.php:312
+#, fuzzy
+msgid "Second date (different days and months)"
+msgstr "2 番目の日付 (異なる日と月)"
+
+#: views/options.php:323
+#, fuzzy
+msgid "First date (different days, months and years)"
+msgstr "最初の日付 (異なる日、月、年)"
+
+#: views/options.php:333
+#, fuzzy
+msgid "Second date (different days, months and years)"
+msgstr "2 番目の日付 (異なる日、月、年)"
+
+#: views/options.php:344
+#, fuzzy
+msgid "Custom separator between dates"
+msgstr "日付間のカスタム区切り記号"
+
+#: views/options.php:354 views/templates/default.php:157
 #, fuzzy
 msgid "Days disabled"
 msgstr "無効日数"
 
-#: views/options.php:279 views/templates/default.php:108
+#: views/options.php:355 views/templates/default.php:158
 #, fuzzy
 msgid "Select the days that NO shipments are made."
 msgstr "出荷を行わない日を選択します。"
 
-#: views/options.php:284 views/templates/default.php:113
+#: views/options.php:360 views/templates/default.php:163
 msgid "Monday"
 msgstr "月曜日"
 
-#: views/options.php:289 views/templates/default.php:118
+#: views/options.php:365 views/templates/default.php:168
 msgid "Tuesday"
 msgstr "火曜日"
 
-#: views/options.php:294 views/templates/default.php:123
+#: views/options.php:370 views/templates/default.php:173
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: views/options.php:299 views/templates/default.php:128
+#: views/options.php:375 views/templates/default.php:178
 msgid "Thursday"
 msgstr "木曜日"
 
-#: views/options.php:304 views/templates/default.php:133
+#: views/options.php:380 views/templates/default.php:183
 msgid "Friday"
 msgstr "金曜日"
 
-#: views/options.php:309 views/templates/default.php:138
+#: views/options.php:385 views/templates/default.php:188
 msgid "Saturday"
 msgstr "土曜日"
 
-#: views/options.php:314 views/templates/default.php:143
+#: views/options.php:390 views/templates/default.php:193
 msgid "Sunday"
 msgstr "日曜日"
 
-#: views/options.php:319
+#: views/options.php:395 views/templates/default.php:14
 msgid "Position"
 msgstr "位置"
 
-#: views/options.php:334
+#: views/options.php:410
 msgid "Save"
 msgstr "保存"
 
-#: views/options.php:336
+#: views/options.php:412
 #, fuzzy
 msgid "Need style?"
 msgstr "スタイルが必要ですか?"
 
-#: views/options.php:337
+#: views/options.php:413
 #, fuzzy
 msgid "Enjoy! Paste this CSS code into your Customizer and edit as you like"
 msgstr ""
 "楽しむ！このCSSコードをカスタマイザに貼り付けて、好きなように編集します"
 
-#: views/templates/default.php:14
+#: views/templates/default.php:64
 #, fuzzy
 msgid "Overwrite general settings"
 msgstr "一般設定を上書きする"

@@ -282,6 +282,7 @@ class EDWCore {
 			$useRelativeDates  = get_option( '_edw_relative_dates', false );
 			$elon              = __( ' on', 'estimated-delivery-for-woocommerce' );
 			$date              = date_i18n( (string) ( $wpDateFormat ), strtotime( $minDate ) );
+			$customDateFormatting = get_option( '_edw_date_custom', [] );
 			
 			// Date format reference: https://www.php.net/manual/en/datetime.format.php
 			
@@ -308,13 +309,19 @@ class EDWCore {
 					}
 				} elseif ( $d && ! $m && ! $y ) {
 					//00 - 00 MM, YYYY
-					$date = date_i18n( 'j ', strtotime( $minDate ) ) . ' - ' . date_i18n( "j F, Y", strtotime( $maxDate ) );
+					$date = date_i18n( $customDateFormatting['left-d'] ?? 'j ', strtotime( $minDate ) )
+					        . ($customDateFormatting['separator'] ?? ' - ')
+					        . date_i18n( $customDateFormatting['right-d'] ?? 'j F, Y', strtotime( $maxDate ) );
 				} elseif ( $d && $m && ! $y ) {
 					// 00 MM - 00 MM, YYYY
-					$date = date_i18n( 'j F', strtotime( $minDate ) ) . ' - ' . date_i18n( "j F, Y", strtotime( $maxDate ) );
+					$date = date_i18n( $customDateFormatting['left-dm'] ?? 'j F', strtotime( $minDate ) )
+					        . ($customDateFormatting['separator'] ?? ' - ')
+					        . date_i18n( $customDateFormatting['right-dm'] ?? 'j F, Y', strtotime( $maxDate ) );
 				} elseif ( $d && $m && $y ) {
 					// 00 MM YYYY - 00 MM YYYY
-					$date = date_i18n( 'j F Y', strtotime( $minDate ) ) . ' - ' . date_i18n( "j F Y", strtotime( $maxDate ) );
+					$date = date_i18n( $customDateFormatting['left-dmy'] ?? 'j F Y', strtotime( $minDate ) )
+					        . ($customDateFormatting['separator'] ?? ' - ')
+					        . date_i18n( $customDateFormatting['right-dmy'] ?? 'j F Y', strtotime( $maxDate ) );
 				}
 			} else {
 				$thisWeek = date( 'W' );
